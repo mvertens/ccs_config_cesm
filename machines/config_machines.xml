@@ -3690,7 +3690,6 @@ This allows using a different mpirun command to launch unit tests
       <env name="ESMF_RUNTIME_PROFILE">ON</env>
       <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
       <env name="HCOLL_MAIN_IB">mlx5_0:1</env>
-      <env name="HCOLL_ENABLE_MCAST">1</env>
       <env name="KMP_STACKSIZE">64M</env>
       <env name="MKL_DEBUG_CPU_TYPE">5</env>
       <env name="PIO_VERSION_MAJOR">2</env>
