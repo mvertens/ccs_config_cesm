@@ -3690,7 +3690,6 @@ This allows using a different mpirun command to launch unit tests
       <env name="ESMF_RUNTIME_PROFILE">ON</env>
       <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
       <env name="HCOLL_MAIN_IB">mlx5_0:1</env>
-      <env name="HCOLL_ENABLE_MCAST">1</env>
       <env name="KMP_STACKSIZE">64M</env>
       <env name="MKL_DEBUG_CPU_TYPE">5</env>
       <env name="PIO_VERSION_MAJOR">2</env>
@@ -3704,7 +3703,12 @@ This allows using a different mpirun command to launch unit tests
       <env name="OMPI_MCA_coll">^fca</env>
       <env name="OMPI_MCA_coll_hcoll_priority">95</env>
       <env name="OMPI_MCA_coll_hcoll_np">8</env>
-      <env name="OMPI_222MCA222222_io">ompio</env>
+      <env name="OMPI_MCA_io">ompio</env>
+      <env name="OMPI_MCA_fs_lustre_stripe_size">1048576</env>
+      <env name="OMPI_MCA_fs_lustre_stripe_width">8</env>
+      <env name="OMPI_MCA_sharedfp">^lockedfile,individual</env>
+      <env name="I_MPI_EXTRA_FILESYSTEM_LIST">lustre</env>
+      <env name="I_MPI_EXTRA_FILESYSTEM">on</env>
       <!--env name="OMPI_MCA_fs_lustre_stripe_size">1048576</env-->
       <!--env name="OMPI_MCA_fs_lustre_stripe_width">8</env-->
     </environment_variables>
