@@ -187,6 +187,7 @@
     <grid name="lnd">TL319</grid>
     <grid name="rof">JRA025</grid>
     <grid name="ocnice">tnx1v4</grid>
+    <mask>tnx1v4</mask>
   </model_grid>
   <model_grid alias="TL639_tn14" not_compset="_CAM">
     <grid name="atm">TL639</grid>
@@ -206,6 +207,20 @@
     <grid name="lnd">T62</grid>
     <grid name="ocnice">gx1v7</grid>
     <mask>gx1v7</mask>
+  </model_grid>
+
+  <model_grid alias="TL319_tn0254" not_compset="_CAM">
+    <grid name="atm">TL319</grid>
+    <grid name="lnd">TL319</grid>
+    <grid name="rof">JRA025</grid>
+    <grid name="ocnice">tnx0.25v4</grid>
+    <mask>tnx0.25v4</mask>
+  </model_grid>
+  <model_grid alias="T62_tn0254" not_compset="_CAM">
+    <grid name="atm">T62</grid>
+    <grid name="lnd">T62</grid>
+    <grid name="ocnice">tnx0.25v4</grid>
+    <mask>tnx0.25v4</mask>
   </model_grid>
 
   <!-- f09 finite volume atm grid -->
