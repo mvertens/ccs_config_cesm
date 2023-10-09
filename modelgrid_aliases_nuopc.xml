@@ -774,4 +774,15 @@
     <mask>tnx1v4</mask>
   </model_grid>
 
+  <!-- NorESM PALEO configurations -->
+  <model_grid alias="T62_tnx0.25_DOTpaleo34Ma" not_compset="_CAM">
+    <grid name="atm">T62</grid>
+    <grid name="ocnice">tnx0.25_DOTpaleo34Ma</grid>
+  </model_grid>
+  <model_grid alias="f19_tnx0.25_DOTpaleo34Ma" not_compset="_CAM">
+    <grid name="atm">1.9x2.5</grid>
+    <grid name="ocnice">tnx0.25_DOTpaleo34Ma</grid>
+  </model_grid>
+
+
 </grids>
