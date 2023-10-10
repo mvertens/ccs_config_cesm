@@ -338,6 +338,12 @@
     <desc>tx0.1v3 is tripole v3 1/10-deg grid:</desc>
     <support>Experimental for high resolution experiments</support>
   </domain>
+  <domain name="tnx2v1">
+    <nx>180</nx> <ny>192</ny>
+    <mesh>$DIN_LOC_ROOT/share/meshes/tnx2v1_20230815_cdf5_ESMFmesh.nc</mesh>
+    <desc>tnx2v1 is tripole v1 2-deg BLOM grid:</desc>
+    <support>Experimental for BLOM experiments</support>
+  </domain>
   <domain name="tnx1v4">
     <nx>360</nx> <ny>384</ny>
     <mesh>$DIN_LOC_ROOT/share/meshes/tnx1v4_20170601_cdf5_ESMFmesh.nc</mesh>
