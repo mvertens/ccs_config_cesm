@@ -348,7 +348,7 @@
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
     <grid name="ocnice">1.9x2.5</grid>
-    <mask>gx1v6</mask>
+    <mask>gx1v7</mask>
   </model_grid>
 
   <model_grid alias="f19_f19_mnull" compset="_DOCN%SAQUAP|DOCN%DAQUAP" >
