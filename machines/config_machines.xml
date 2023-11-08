@@ -668,7 +668,7 @@ This allows using a different mpirun command to launch unit tests
       <modules compiler="intel" mpilib="mpt" DEBUG="FALSE">
         <command name="use">/glade/p/cesmdata/cseg/PROGS/modulefiles/esmfpkgs/intel/19.1.1/</command>
         <command name="load">esmf-8.5.0b19-ncdfio-mpt-O</command>
-      </modules> 
+      </modules>
       <modules compiler="intel" mpilib="openmpi" DEBUG="TRUE">
         <command name="use">/glade/p/cesmdata/cseg/PROGS/modulefiles/esmfpkgs/intel/19.1.1/</command>
         <command name="load">esmf-8.5.0b19-ncdfio-openmpi-g</command>
@@ -676,7 +676,7 @@ This allows using a different mpirun command to launch unit tests
       <modules compiler="intel" mpilib="openmpi" DEBUG="FALSE">
         <command name="use">/glade/p/cesmdata/cseg/PROGS/modulefiles/esmfpkgs/intel/19.1.1/</command>
         <command name="load">esmf-8.5.0b19-ncdfio-openmpi-O</command>
-      </modules> 
+      </modules>
       <modules mpilib="mpi-serial">
         <command name="load">mpi-serial/2.3.0</command>
       </modules>
@@ -1894,7 +1894,7 @@ This allows using a different mpirun command to launch unit tests
       <modules mpilib="mpi-serial">
         <command name="load">mpi-serial/2.3.0</command>
       </modules>
-      
+
       <modules>
         <command name="load">cmake/3.23.2</command>
         <command name="load">cray-libsci/22.08.1.1</command>
@@ -1907,7 +1907,7 @@ This allows using a different mpirun command to launch unit tests
 
       <modules compiler="oneapi">
         <command name="load">mkl/2022.1.0</command>
-      </modules>	
+      </modules>
       <modules mpilib="mpi-serial">
         <command name="load">netcdf/4.9.0</command>
       </modules>
@@ -1942,7 +1942,7 @@ This allows using a different mpirun command to launch unit tests
       <env name="MPICH_MPIIO_HINTS">*:romio_cb_read=enable:romio_cb_write=enable:striping_factor=2</env>
     </environment_variables>
     <environment_variables comp_interface="nuopc">
-      <!-- required on all systems for timing file output --> 
+      <!-- required on all systems for timing file output -->
       <env name="ESMF_RUNTIME_PROFILE">ON</env>
       <env name="ESMF_RUNTIME_PROFILE_OUTPUT">SUMMARY</env>
     </environment_variables>
@@ -3729,7 +3729,7 @@ This allows using a different mpirun command to launch unit tests
     <DIN_LOC_ROOT_CLMFORC>/cluster/shared/noresm/inputdata/atm/datm7</DIN_LOC_ROOT_CLMFORC>
     <DOUT_S_ROOT>/cluster/work/users/$USER/archive/$CASE</DOUT_S_ROOT>
     <BASELINE_ROOT>UNSET</BASELINE_ROOT>
-    <CCSM_CPRNC>UNSET</CCSM_CPRNC>
+    <CCSM_CPRNC>/cluster/shared/noresm/tools/cprnc/cprnc</CCSM_CPRNC>
     <GMAKE_J>8</GMAKE_J>
     <BATCH_SYSTEM>slurm</BATCH_SYSTEM>
     <SUPPORTED_BY>noresmCommunity</SUPPORTED_BY>
