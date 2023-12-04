@@ -274,6 +274,14 @@
     <mask>tnx1v4</mask>
   </model_grid>
 
+  <model_grid alias="f19_tn14_wtnx1v4p100k" not_compset="_POP|_MOM">
+    <grid name="atm">1.9x2.5</grid>
+    <grid name="lnd">1.9x2.5</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <grid name="wav">wise.tnx1v4p.100k</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+
   <model_grid alias="f19_g17_wg17" compset="_CAM">
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
