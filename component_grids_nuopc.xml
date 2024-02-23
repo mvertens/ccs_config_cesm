@@ -525,9 +525,15 @@
     <support>Experimental for Making Waves experiments</support>
   </domain>
   <domain name="w025">
-    <nx>1169869</nx> <ny>1</ny>
+    <nx>575697</nx> <ny>1</ny>
     <mesh>$DIN_LOC_ROOT/share/meshes/w025_ESMFmesh_cdf5_c20230707.nc</mesh>
     <desc>1/4 degree unstructured mesh</desc>
+    <support>Experimental for Making Waves experiments</support>
+  </domain>
+  <domain name="w025AA">
+    <nx>677888</nx> <ny>1</ny>
+    <mesh>$DIN_LOC_ROOT/share/meshes/w025k_AA_esmf_mesh_20240210.nc</mesh>
+    <desc> uniform 2.5km made by AA unstructured mesh</desc>
     <support>Experimental for Making Waves experiments</support>
   </domain>
 
