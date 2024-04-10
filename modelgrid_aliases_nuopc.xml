@@ -28,7 +28,9 @@
     <grid name="wav"       compset="WW3DEV"      >wtnx1v4</grid>
   </model_grid_defaults>
 
-  <!-- CTSM single point grids -->
+  <!-- ======================================== -->
+  <!-- Section: CTSM single point grids -->
+  <!-- ======================================== -->
 
   <model_grid alias="1D_1D" compset="DATM.+DROF|DATM.+SROF">
     <grid name="atm">01col</grid>
@@ -92,12 +94,23 @@
     <mask>0.125nldas2</mask>
   </model_grid>
 
-  <model_grid alias="hcru_hcru_mt13" not_compset="_POP|_MOM|_BLOM" compset="DATM.+CLM">
+  <model_grid alias="hcru_hcru_mt13" compset="DATM.+CLM.+SOCN">
     <grid name="atm">360x720cru</grid>
     <grid name="lnd">360x720cru</grid>
     <grid name="ocnice">tx0.1v3</grid>
     <mask>tx0.1v3</mask>
   </model_grid>
+
+  <model_grid alias="f10_f10_musgs" not_compset="_POP">
+    <grid name="atm">10x15</grid>
+    <grid name="lnd">10x15</grid>
+    <grid name="ocnice">10x15</grid>
+    <mask>usgs</mask>
+  </model_grid>
+
+  <!-- ======================================== -->
+  <!-- Section: model grids with CAM (and DATM) -->
+  <!-- ======================================== -->
 
   <!-- eulerian grids with CAM -->
 
@@ -113,19 +126,11 @@
     <grid name="ocnice">gx3v7</grid>
     <mask>gx3v7</mask>
   </model_grid>
-  <model_grid alias="T31_g37_gris4" compset="_CISM|_DGLC">
-    <grid name="atm">T31</grid>
-    <grid name="lnd">T31</grid>
-    <grid name="ocnice">gx3v7</grid>
-    <grid name="glc">gris4</grid>
-    <mask>gx3v7</mask>
-  </model_grid>
-  <model_grid alias="T31_g37_gris20" compset="_CISM|_DGLC">
-    <grid name="atm">T31</grid>
-    <grid name="lnd">T31</grid>
-    <grid name="ocnice">gx3v7</grid>
-    <grid name="glc">gris20</grid>
-    <mask>gx3v7</mask>
+  <model_grid alias="T42_T42" not_compset="_POP|_MOM|_BLOM">
+    <grid name="atm">T42</grid>
+    <grid name="lnd">T42</grid>
+    <grid name="ocnice">T42</grid>
+    <mask>tnx1v4</mask>
   </model_grid>
   <model_grid alias="T42_T42_mtn14" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">T42</grid>
@@ -223,147 +228,28 @@
 
   <!-- f09 finite volume atm grid -->
 
-
   <model_grid alias="f09_g17" compset="DATM">
     <grid name="atm">0.9x1.25</grid>
     <grid name="lnd">0.9x1.25</grid>
     <grid name="ocnice">gx1v7</grid>
     <mask>gx1v7</mask>
   </model_grid>
-
+  <model_grid alias="f09_f09_mg17" not_compset="_POP|_MOM|_BLOM" >
+    <!-- Needed for aux_cdeps_noresm test suite -->
+    <grid name="atm">0.9x1.25</grid>
+    <grid name="lnd">0.9x1.25</grid>
+    <grid name="ocnice">0.9x1.25</grid>
+    <mask>gx1v7</mask>
+  </model_grid>
   <model_grid alias="f09_f09_mtn14" not_compset="_POP|_MOM|_BLOM" >
     <grid name="atm">0.9x1.25</grid>
     <grid name="lnd">0.9x1.25</grid>
     <grid name="ocnice">0.9x1.25</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="f09_tn14" not_compset="_POP|_MOM|_BLOM" >
+  <model_grid alias="f09_tn14" not_compset="_POP|_MOM" >
     <grid name="atm">0.9x1.25</grid>
     <grid name="lnd">0.9x1.25</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-  <model_grid alias="f09_tn14_wtn14" not_compset="_POP|_MOM|_BLOM" >
-    <grid name="atm">0.9x1.25</grid>
-    <grid name="lnd">0.9x1.25</grid>
-    <grid name="wav">wtnx1v4</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-  <model_grid alias="f09_tn14_wtn14nw" not_compset="_POP|_MOM|_BLOM" >
-    <grid name="atm">0.9x1.25</grid>
-    <grid name="lnd">0.9x1.25</grid>
-    <grid name="wav">wtnx1v4nw</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-  <model_grid alias="f09_tn14_gris4" compset="_CISM|_DGLC" not_compset="_POP|_MOM|_BLOM">
-    <grid name="atm">0.9x1.25</grid>
-    <grid name="lnd">0.9x1.25</grid>
-    <grid name="glc">gris4</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-  <model_grid alias="f09_g17_gris4" compset="_CISM|_DGLC" not_compset="_BLOM">
-    <grid name="atm">0.9x1.25</grid>
-    <grid name="lnd">0.9x1.25</grid>
-    <grid name="glc">gris4</grid>
-    <grid name="ocnice">gx1v7</grid>
-    <mask>gx1v7</mask>
-  </model_grid>
-  <model_grid alias="f09_tn14_gris20" compset="_CISM|_DGLC" not_compset="_POP|_MOM|_BLOM">
-    <grid name="atm">0.9x1.25</grid>
-    <grid name="lnd">0.9x1.25</grid>
-    <grid name="glc">gris20</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-  <model_grid alias="f09_g17_gris20" compset="_CISM|_DGLC" not_compset="_BLOM">
-    <grid name="atm">0.9x1.25</grid>
-    <grid name="lnd">0.9x1.25</grid>
-    <grid name="glc">gris20</grid>
-    <grid name="ocnice">gx1v7</grid>
-    <mask>gx1v7</mask>
-  </model_grid>
-  <model_grid alias="f09_tn14_ais8" compset="_CISM|_DGLC" not_compset="_POP|_MOM|_BLOM">
-    <grid name="atm">0.9x1.25</grid>
-    <grid name="lnd">0.9x1.25</grid>
-    <grid name="glc">ais8</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-  <model_grid alias="f09_tn14_ais8gris4" compset="_CISM|_DGLC" not_compset="_POP|_MOM|_BLOM">
-    <grid name="atm">0.9x1.25</grid>
-    <grid name="lnd">0.9x1.25</grid>
-    <grid name="glc">ais8:gris4</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-  <model_grid alias="f09_g17_ais8" compset="_CISM|_DGLC" not_compset="_BLOM">
-    <grid name="atm">0.9x1.25</grid>
-    <grid name="lnd">0.9x1.25</grid>
-    <grid name="glc">ais8</grid>
-    <grid name="ocnice">gx1v7</grid>
-    <mask>gx1v7</mask>
-  </model_grid>
-  <model_grid alias="f19_g17_ais8" compset="_CISM|_DGLC">
-    <grid name="atm">1.9x2.5</grid>
-    <grid name="lnd">1.9x2.5</grid>
-    <grid name="ocnice">gx1v7</grid>
-    <grid name="glc">ais8</grid>
-    <mask>gx1v7</mask>
-  </model_grid>
-  <model_grid alias="f09_g17_ais8gris4" compset="_CISM|_DGLC" not_compset="_BLOM">
-    <grid name="atm">0.9x1.25</grid>
-    <grid name="lnd">0.9x1.25</grid>
-    <grid name="glc">ais8:gris4</grid>
-    <grid name="ocnice">gx1v7</grid>
-    <mask>gx1v7</mask>
-  </model_grid>
-
-  <model_grid alias="f19_tn14_wtn14" not_compset="_POP|_MOM|_BLOM">
-    <grid name="atm">1.9x2.5</grid>
-    <grid name="lnd">1.9x2.5</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <grid name="wav">wtnx1v4</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-  <model_grid alias="f19_tn14_wtn14nw" not_compset="_POP|_MOM|_BLOM">
-    <grid name="atm">1.9x2.5</grid>
-    <grid name="lnd">1.9x2.5</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <grid name="wav">wtnx1v4nw</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-
-  <model_grid alias="f19_tn14_w025" not_compset="_POP|_MOM|_BLOM">
-    <grid name="atm">1.9x2.5</grid>
-    <grid name="lnd">1.9x2.5</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <grid name="wav">w025</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-
-  <model_grid alias="f19_tn14_wtnx1v4p100k" not_compset="_POP|_MOM|_BLOM">
-    <grid name="atm">1.9x2.5</grid>
-    <grid name="lnd">1.9x2.5</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <grid name="wav">wise.tnx1v4p.100k</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-
-  <model_grid alias="f19_g17_wg17" compset="_CAM">
-    <grid name="atm">1.9x2.5</grid>
-    <grid name="lnd">1.9x2.5</grid>
-    <grid name="ocnice">gx1v7</grid>
-    <grid name="wav">gx1v7</grid>
-    <mask>gx1v7</mask>
-  </model_grid>
-
-  <model_grid alias="f09_tn14_ais8" compset="_CISM|_DGLC" not_compset="_POP|_MOM|_BLOM">
-    <grid name="atm">0.9x1.25</grid>
-    <grid name="lnd">0.9x1.25</grid>
-    <grid name="glc">ais8</grid>
     <grid name="ocnice">tnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
@@ -381,46 +267,24 @@
     <grid name="lnd">1.9x2.5</grid>
     <grid name="ocnice">gx1v7</grid>
    <mask>gx1v7</mask>
-</model_grid>
-
-  <model_grid alias="f19_tn14" not_compset="_POP|_MOM|_BLOM">
+  </model_grid>
+  <model_grid alias="f19_tn14" not_compset="_POP|_MOM">
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
     <grid name="ocnice">tnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="f19_tn14_wtn14" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="f19_f19_mg17" not_compset="_POP|_MOM|_BLOM" >
+    <!-- Needed for aux_cdeps_noresm test suite -->
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
-    <grid name="wav">wtnx1v4</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-  <model_grid alias="f19_tn14_gris4" compset="_CISM|_DGLC">
-    <grid name="atm">1.9x2.5</grid>
-    <grid name="lnd">1.9x2.5</grid>
-    <grid name="glc">gris4</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <mask>tnx1v4</mask>
+    <grid name="ocnice">1.9x2.5</grid>
+    <mask>gx1v7</mask>
   </model_grid>
   <model_grid alias="f19_f19_mtn14" not_compset="_POP">
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
     <grid name="ocnice">1.9x2.5</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-  <model_grid alias="f19_f19_ais8_mtn14" compset="_CISM|_DGLC">
-    <grid name="atm">1.9x2.5</grid>
-    <grid name="lnd">1.9x2.5</grid>
-    <grid name="glc">ais8</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-  <model_grid alias="f19_f19_ais8gris4_mtn14" compset="_CISM|_DGLC">
-    <grid name="atm">1.9x2.5</grid>
-    <grid name="lnd">1.9x2.5</grid>
-    <grid name="glc">ais8:gris4</grid>
-    <grid name="ocnice">tnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
   <model_grid alias="f19_f19" compset="DATM">
@@ -453,33 +317,13 @@
 
   <!-- f10 finite volume atm grid -->
 
-  <model_grid alias="f10_f10_mg37" not_compset="_POP">
+  <model_grid alias="f10_f10_mg37" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">10x15</grid>
     <grid name="lnd">10x15</grid>
     <grid name="ocnice">10x15</grid>
     <mask>gx3v7</mask>
   </model_grid>
-  <model_grid alias="f10_f10_ais8_mg37" compset="_CISM|_DGLC" not_compset="_POP">
-    <grid name="atm">10x15</grid>
-    <grid name="lnd">10x15</grid>
-    <grid name="ocnice">10x15</grid>
-    <grid name="glc">ais8</grid>
-    <mask>gx3v7</mask>
-  </model_grid>
-  <model_grid alias="f10_f10_ais8gris4_mg37" compset="_CISM|_DGLC" not_compset="_POP">
-    <grid name="atm">10x15</grid>
-    <grid name="lnd">10x15</grid>
-    <grid name="ocnice">10x15</grid>
-    <grid name="glc">ais8:gris4</grid>
-    <mask>gx3v7</mask>
-  </model_grid>
-  <model_grid alias="f10_f10_musgs" not_compset="_POP">
-    <grid name="atm">10x15</grid>
-    <grid name="lnd">10x15</grid>
-    <grid name="ocnice">10x15</grid>
-    <mask>usgs</mask>
-  </model_grid>
-  <model_grid alias="f10_g37">
+  <model_grid alias="f10_g37" not_compset="_BLOM">
     <grid name="atm">10x15</grid>
     <grid name="lnd">10x15</grid>
     <grid name="ocnice">gx3v7</grid>
@@ -487,72 +331,73 @@
   </model_grid>
 
   <!--  spectral element grids -->
-  <model_grid alias="ne3pg3_ne3pg3_mg37" not_compset="_POP">
+
+  <model_grid alias="ne3pg3_ne3pg3_mg37" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">ne3np4.pg3</grid>
     <grid name="lnd">ne3np4.pg3</grid>
     <grid name="ocnice">ne3np4.pg3</grid>
     <mask>gx3v7</mask>
   </model_grid>
 
-  <model_grid alias="ne5_ne5_mg37" not_compset="_POP|_MOM|_BLOM|_BLOM">
+  <model_grid alias="ne5_ne5_mg37" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">ne5np4</grid>
     <grid name="lnd">ne5np4</grid>
     <grid name="ocnice">ne5np4</grid>
     <mask>gx3v7</mask>
   </model_grid>
 
-  <model_grid alias="ne16_tn14">
+  <model_grid alias="ne16_tn14" compset="_BLOM">
     <grid name="atm">ne16np4</grid>
     <grid name="lnd">ne16np4</grid>
     <grid name="ocnice">tnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="ne16_ne16_tn14" not_compset="_POP|_MOM|_BLOM|_BLOM">
+  <model_grid alias="ne16_ne16_tn14" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">ne16np4</grid>
     <grid name="lnd">ne16np4</grid>
     <grid name="ocnice">ne16np4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
 
-  <model_grid alias="ne30_tn14">
+  <model_grid alias="ne30_tn14" compset="_BLOM">
     <grid name="atm">ne30np4</grid>
     <grid name="lnd">ne30np4</grid>
     <grid name="ocnice">tnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="ne30pg3_tn14">
+  <model_grid alias="ne30pg3_tn14" compset="_BLOM">
     <grid name="atm">ne30np4.pg3</grid>
     <grid name="lnd">ne30np4.pg3</grid>
     <grid name="ocnice">tnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="ne30_ne30_mg17" not_compset="_POP">
+  <model_grid alias="ne30_ne30_mg17" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">ne30np4</grid>
     <grid name="lnd">ne30np4</grid>
     <grid name="ocnice">ne30np4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
 
-  <model_grid alias="ne60_g17">
+  <model_grid alias="ne60_g17" not_compset="_BLOM">
     <grid name="atm">ne60np4</grid>
     <grid name="lnd">ne60np4</grid>
     <grid name="ocnice">gx1v7</grid>
     <mask>gx1v7</mask>
   </model_grid>
 
-  <model_grid alias="ne120_g17">
+  <model_grid alias="ne120_g17" not_compset="_BLOM">
     <grid name="atm">ne120np4</grid>
     <grid name="lnd">ne120np4</grid>
     <grid name="ocnice">gx1v7</grid>
     <mask>gx1v7</mask>
   </model_grid>
-  <model_grid alias="ne120_t12">
+  <model_grid alias="ne120_t12" not_compset="_BLOM">
     <grid name="atm">ne120np4</grid>
     <grid name="lnd">ne120np4</grid>
     <grid name="ocnice">tx0.1v2</grid>
     <mask>tx0.1v2</mask>
   </model_grid>
-  <model_grid alias="ne120_ne120_mg17" not_compset="_POP">
+  <model_grid alias="ne120_ne120_mg17" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">ne120np4</grid>
     <grid name="lnd">ne120np4</grid>
     <grid name="ocnice">ne120np4</grid>
@@ -582,14 +427,14 @@
     <mask>gx1v7</mask>
   </model_grid>
 
-  <model_grid alias="ne120pg2_ne120pg2_mg17" not_compset="_POP">
+  <model_grid alias="ne120pg2_ne120pg2_mg17" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">ne120np4.pg2</grid>
     <grid name="lnd">ne120np4.pg2</grid>
     <grid name="ocnice">ne120np4.pg2</grid>
     <mask>gx1v7</mask>
   </model_grid>
 
-  <model_grid alias="ne120pg2_ne120pg2_mt12">
+  <model_grid alias="ne120pg2_ne120pg2_mt12" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">ne120np4.pg2</grid>
     <grid name="lnd">ne120np4.pg2</grid>
     <grid name="ocnice">ne120np4.pg2</grid>
@@ -605,35 +450,35 @@
 
   <!--  spectral element grids with 3x3 FVM physics grid -->
 
-  <model_grid alias="ne5pg3_ne5pg3_mg37" not_compset="_POP|_MOM|_BLOM|_BLOM">
+  <model_grid alias="ne5pg3_ne5pg3_mg37" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">ne5np4.pg3</grid>
     <grid name="lnd">ne5np4.pg3</grid>
     <grid name="ocnice">ne5np4.pg3</grid>
     <mask>gx3v7</mask>
   </model_grid>
 
-  <model_grid alias="ne16pg3_ne16pg3_mtn14" not_compset="_POP|_MOM|_BLOM|_BLOM">
+  <model_grid alias="ne16pg3_ne16pg3_mtn14" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">ne16np4.pg3</grid>
     <grid name="lnd">ne16np4.pg3</grid>
     <grid name="ocnice">ne16np4.pg3</grid>
     <mask>tnx1v5</mask>
   </model_grid>
 
-  <model_grid alias="ne30pg3_ne30pg3_mtn14" not_compset="_POP|_MOM|_BLOM|_BLOM">
+  <model_grid alias="ne30pg3_ne30pg3_mtn14" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">ne30np4.pg3</grid>
     <grid name="lnd">ne30np4.pg3</grid>
     <grid name="ocnice">ne30np4.pg3</grid>
     <mask>tnx1v4</mask>
   </model_grid>
 
-  <model_grid alias="ne60pg3_ne60pg3_mtn14" not_compset="_POP|_MOM|_BLOM|_BLOM">
+  <model_grid alias="ne60pg3_ne60pg3_mtn14" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">ne60np4.pg3</grid>
     <grid name="lnd">ne60np4.pg3</grid>
     <grid name="ocnice">ne60np4.pg3</grid>
     <mask>tnx1v4</mask>
   </model_grid>
 
-  <model_grid alias="ne120pg3_ne120pg3_mtn14" not_compset="_POP|_MOM|_BLOM|_BLOM">
+  <model_grid alias="ne120pg3_ne120pg3_mtn14" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">ne120np4.pg3</grid>
     <grid name="lnd">ne120np4.pg3</grid>
     <grid name="ocnice">ne120np4.pg3</grid>
@@ -649,25 +494,25 @@
 
   <!--  spectral element grids with 4x4 FVM physics grid -->
 
-  <model_grid alias="ne5pg4_ne5pg4_mg37" not_compset="_POP|_MOM|_BLOM|_BLOM">
+  <model_grid alias="ne5pg4_ne5pg4_mg37" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">ne5np4.pg4</grid>
     <grid name="lnd">ne5np4.pg4</grid>
     <grid name="ocnice">ne5np4.pg4</grid>
     <mask>gx3v7</mask>
   </model_grid>
-  <model_grid alias="ne30pg4_ne30pg4_mg17" not_compset="_POP|_MOM|_BLOM|_BLOM">
+  <model_grid alias="ne30pg4_ne30pg4_mg17" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">ne30np4.pg4</grid>
     <grid name="lnd">ne30np4.pg4</grid>
     <grid name="ocnice">ne30np4.pg4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="ne60pg4_ne60pg4_mg17" not_compset="_POP|_MOM|_BLOM|_BLOM">
+  <model_grid alias="ne60pg4_ne60pg4_mg17" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">ne60np4.pg4</grid>
     <grid name="lnd">ne60np4.pg4</grid>
     <grid name="ocnice">ne60np4.pg4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="ne120pg4_ne120pg4_mg17" not_compset="_POP|_MOM|_BLOM|_BLOM">
+  <model_grid alias="ne120pg4_ne120pg4_mg17" not_compset="_POP|_MOM|_BLOM">
     <grid name="atm">ne120np4.pg4</grid>
     <grid name="lnd">ne120np4.pg4</grid>
     <grid name="ocnice">ne120np4.pg4</grid>
@@ -694,7 +539,7 @@
     <grid name="ocnice">tnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="ne0ARCTICne30x4_t12_mt12" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne0ARCTICne30x4_t12_mt12" not_compset="_BLOM">
     <grid name="atm">ne0np4.ARCTIC.ne30x4</grid>
     <grid name="lnd">ne0np4.ARCTIC.ne30x4</grid>
     <grid name="ocnice">tx0.1v2</grid>
@@ -706,7 +551,7 @@
     <grid name="ocnice">ne0np4.ARCTIC.ne30x4</grid>
     <mask>gx1v7</mask>
   </model_grid>
-  <model_grid alias="ne0ARCTICne30x4_g17_mg17" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne0ARCTICne30x4_g17_mg17" not_compset="_BLOM">
     <grid name="atm">ne0np4.ARCTIC.ne30x4</grid>
     <grid name="lnd">ne0np4.ARCTIC.ne30x4</grid>
     <grid name="ocnice">gx1v7</grid>
@@ -740,6 +585,10 @@
     <mask>gx1v7</mask>
   </model_grid>
 
+  <!-- ======================================== -->
+  <!-- Section: model grids with river -->
+  <!-- ======================================== -->
+
   <!-- new runoff grids for data runoff model DROF -->
 
   <model_grid alias="f45_g37_rx1" compset="_DROF">
@@ -761,38 +610,196 @@
     <mask>gx1v7</mask>
   </model_grid>
 
+  <!-- ======================================== -->
+  <!-- Section: model grids with land ice -->
+  <!-- ======================================== -->
 
-  <!-- NorESM ww3 testing configurations WITHOUT ocean-->
+  <model_grid alias="T31_g37_gris4" compset="_CISM|_DGLC" not_compset="_BLOM">
+    <grid name="atm">T31</grid>
+    <grid name="lnd">T31</grid>
+    <grid name="ocnice">gx3v7</grid>
+    <grid name="glc">gris4</grid>
+    <mask>gx3v7</mask>
+  </model_grid>
+  <model_grid alias="f09_tn14_gris4" compset="_CISM|_DGLC" not_compset="_POP|_MOM">
+    <grid name="atm">0.9x1.25</grid>
+    <grid name="lnd">0.9x1.25</grid>
+    <grid name="glc">gris4</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+  <model_grid alias="f09_g17_gris4" compset="_CISM|_DGLC" not_compset="_BLOM">
+    <grid name="atm">0.9x1.25</grid>
+    <grid name="lnd">0.9x1.25</grid>
+    <grid name="glc">gris4</grid>
+    <grid name="ocnice">gx1v7</grid>
+    <mask>gx1v7</mask>
+  </model_grid>
+  <model_grid alias="f10_f10_ais8_mg37" compset="_CISM|_DGLC" not_compset="_POP">
+    <grid name="atm">10x15</grid>
+    <grid name="lnd">10x15</grid>
+    <grid name="ocnice">10x15</grid>
+    <grid name="glc">ais8</grid>
+    <mask>gx3v7</mask>
+  </model_grid>
+  <model_grid alias="f10_f10_ais8gris4_mg37" compset="_CISM|_DGLC" not_compset="_POP">
+    <grid name="atm">10x15</grid>
+    <grid name="lnd">10x15</grid>
+    <grid name="ocnice">10x15</grid>
+    <grid name="glc">ais8:gris4</grid>
+    <mask>gx3v7</mask>
+  </model_grid>
+  <model_grid alias="f09_tn14_ais8" compset="_CISM|_DGLC" not_compset="_POP|_MOM">
+    <grid name="atm">0.9x1.25</grid>
+    <grid name="lnd">0.9x1.25</grid>
+    <grid name="glc">ais8</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+  <model_grid alias="f09_g17_ais8" compset="_CISM|_DGLC" not_compset="_BLOM">
+    <grid name="atm">0.9x1.25</grid>
+    <grid name="lnd">0.9x1.25</grid>
+    <grid name="glc">ais8</grid>
+    <grid name="ocnice">gx1v7</grid>
+    <mask>gx1v7</mask>
+  </model_grid>
+  <model_grid alias="f09_g17_ais8gris4" compset="_CISM|_DGLC" not_compset="_BLOM">
+    <grid name="atm">0.9x1.25</grid>
+    <grid name="lnd">0.9x1.25</grid>
+    <grid name="glc">ais8:gris4</grid>
+    <grid name="ocnice">gx1v7</grid>
+    <mask>gx1v7</mask>
+  </model_grid>
+  <model_grid alias="f09_tn14_ais8gris4" compset="_CISM|_DGLC" not_compset="_POP|_MOM">
+    <grid name="atm">0.9x1.25</grid>
+    <grid name="lnd">0.9x1.25</grid>
+    <grid name="glc">ais8:gris4</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+  <model_grid alias="f19_g17_ais8" compset="_CISM|_DGLC" not_compset="_BLOM">
+    <grid name="atm">1.9x2.5</grid>
+    <grid name="lnd">1.9x2.5</grid>
+    <grid name="ocnice">gx1v7</grid>
+    <grid name="glc">ais8</grid>
+    <mask>gx1v7</mask>
+  </model_grid>
+  <model_grid alias="f19_tn14_ais8" compset="_CISM|_DGLC" not_compset="_POP|_MOM">
+    <grid name="atm">1.9x2.5</grid>
+    <grid name="lnd">1.9x2.5</grid>
+    <grid name="glc">ais8</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+  <model_grid alias="f19_f19_ais8_mtn14" compset="_CISM|_DGLC" not_compset="_POP|_MOM|_BLOM">
+    <grid name="atm">1.9x2.5</grid>
+    <grid name="lnd">1.9x2.5</grid>
+    <grid name="glc">ais8</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+  <model_grid alias="f19_f19_ais8gris4_mtn14" compset="_CISM|_DGLC" not_compset="_POP|_MOM|_BLOM">
+    <grid name="atm">1.9x2.5</grid>
+    <grid name="lnd">1.9x2.5</grid>
+    <grid name="glc">ais8:gris4</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+  <model_grid alias="f19_tn14_gris4" compset="_CISM|_DGLC">
+    <grid name="atm">1.9x2.5</grid>
+    <grid name="lnd">1.9x2.5</grid>
+    <grid name="glc">gris4</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+
+  <!-- ======================================== -->
+  <!-- Section: model grids with wave -->
+  <!-- ======================================== -->
+
+  <model_grid alias="f09_tn14_wtn14" not_compset="_POP|_MOM" >
+    <grid name="atm">0.9x1.25</grid>
+    <grid name="lnd">0.9x1.25</grid>
+    <grid name="wav">wtnx1v4</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+  <model_grid alias="f09_tn14_wtn14nw" not_compset="_POP|_MOM" >
+    <grid name="atm">0.9x1.25</grid>
+    <grid name="lnd">0.9x1.25</grid>
+    <grid name="wav">wtnx1v4nw</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+  <model_grid alias="f19_tn14_wtn14" not_compset="_POP|_MOM">
+    <grid name="atm">1.9x2.5</grid>
+    <grid name="lnd">1.9x2.5</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <grid name="wav">wtnx1v4</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+  <model_grid alias="f19_tn14_wtn14nw" not_compset="_POP|_MOM">
+    <grid name="atm">1.9x2.5</grid>
+    <grid name="lnd">1.9x2.5</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <grid name="wav">wtnx1v4nw</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+  <model_grid alias="f19_tn14_w025" not_compset="_POP|_MOM">
+    <grid name="atm">1.9x2.5</grid>
+    <grid name="lnd">1.9x2.5</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <grid name="wav">w025</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+  <model_grid alias="f19_tn14_wtnx1v4p100k" not_compset="_POP|_MOM">
+    <grid name="atm">1.9x2.5</grid>
+    <grid name="lnd">1.9x2.5</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <grid name="wav">wise.tnx1v4p.100k</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+  <model_grid alias="f19_g17_wg17" compset="_CAM">
+    <grid name="atm">1.9x2.5</grid>
+    <grid name="lnd">1.9x2.5</grid>
+    <grid name="ocnice">gx1v7</grid>
+    <grid name="wav">gx1v7</grid>
+    <mask>gx1v7</mask>
+  </model_grid>
+  <model_grid alias="f19_tn14_wtn14" not_compset="_POP|_MOM|_BLOM">
+    <grid name="atm">1.9x2.5</grid>
+    <grid name="lnd">1.9x2.5</grid>
+    <grid name="wav">wtnx1v4</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+
+  <!-- NorESM ww3 testing configurations WITH datm and WITHOUT ocean-->
 
   <model_grid alias="ww3a" compset="DWAV">
     <grid name="wav">ww3a</grid>
     <!-- only used for ADWAV testing -->
   </model_grid>
-
   <model_grid alias="TL319_wtn14" not_compset="_CAM|_MOM|_POP">
     <grid name="atm">TL319</grid>
     <grid name="wav">wtnx1v4</grid>
     <mask>wtnx1v4</mask>
   </model_grid>
-
   <model_grid alias="TL319_wtn14100k" not_compset="_CAM|_MOM|_POP">
     <grid name="atm">TL319</grid>
     <grid name="wav">wise.tnx1v4p.100k</grid>
     <mask>wise.tnx1v4p.100k</mask>
   </model_grid>
-
   <model_grid alias="TL319_wtri1deg" not_compset="_CAM|_MOM|_POP">
     <grid name="atm">TL319</grid>
     <grid name="wav">tri1degmask</grid>
     <mask>tri1degmask</mask>
   </model_grid>
-
   <model_grid alias="TL319_w025" not_compset="_CAM|_MOM|_POP">
     <grid name="atm">TL319</grid>
     <grid name="wav">w025</grid>
     <mask>w025</mask>
   </model_grid>
-
   <model_grid alias="T62_wtn14" not_compset="_CAM|_MOM|_POP">
     <grid name="atm">T62</grid>
     <grid name="wav">wtnx1v4</grid>
@@ -803,20 +810,18 @@
     <grid name="wav">wtnx1v4nw</grid>
     <mask>wtnx1v4nw</mask>
   </model_grid>
-
   <model_grid alias="T62_w025" not_compset="_CAM|_MOM|_POP">
     <grid name="atm">T62</grid>
     <grid name="wav">w025</grid>
     <mask>w025</mask>
   </model_grid>
-
   <model_grid alias="T62_w025reg" not_compset="_CAM|_MOM|_POP">
     <grid name="atm">T62</grid>
     <grid name="wav">w025reg</grid>
     <mask>w025reg</mask>
   </model_grid>
 
-  <!-- NorESM ww3 testing configurations WITH ocean-->
+  <!-- NorESM ww3 testing configurations WITH datm and ocean-->
 
   <model_grid alias="TL319_tn14_wtn14" not_compset="_CAM|_MOM|_POP">
     <grid name="atm">TL319</grid>
@@ -825,21 +830,18 @@
     <grid name="rof">JRA025</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-
   <model_grid alias="T62_tn14_wtn14" not_compset="_CAM|_MOM|_POP">
     <grid name="atm">T62</grid>
     <grid name="ocnice">tnx1v4</grid>
     <grid name="wav">wtnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-
   <model_grid alias="T62_tn14_wtn14nw" not_compset="_CAM|_MOM|_POP">
     <grid name="atm">T62</grid>
     <grid name="ocnice">tnx1v4</grid>
     <grid name="wav">wtnx1v4nw</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-
   <model_grid alias="T62_tn14_w025" not_compset="_CAM|_MOM|_POP">
     <grid name="atm">TL319</grid>
     <grid name="ocnice">tnx1v4</grid>
@@ -847,7 +849,6 @@
     <grid name="rof">JRA025</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-
   <model_grid alias="TL319_tn14_wtn14100k" not_compset="_CAM|_MOM|_POP">
     <grid name="atm">TL319</grid>
     <grid name="ocnice">tnx1v4</grid>
@@ -855,7 +856,6 @@
     <grid name="rof">JRA025</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-
   <model_grid alias="TL319_tn14_w025" not_compset="_CAM|_MOM|_POP">
     <grid name="atm">TL319</grid>
     <grid name="ocnice">tnx1v4</grid>
