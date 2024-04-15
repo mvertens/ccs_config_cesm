@@ -54,9 +54,11 @@ This allows using a different mpirun command to launch unit tests
     <value MACH="athena">.*.cluster.net</value>
     <value MACH="aws-hpc6a">regular-dy-computehpc6a-.*</value>
     <value MACH="casper">$ENV{NCAR_HOST}:casper</value>
+    <value MACH="betzy">.*.?betzy\d?.sigma2.no</value>
     <value MACH="cheyenne">.*.?cheyenne\d?.ucar.edu</value>
     <value MACH="coeus">(login[1,2].cluster|compute[0-9]*.cluster)</value>
     <value MACH="derecho">$ENV{NCAR_HOST}:derecho</value>
+    <value MACH="fram">$HOSTNAME</value>
     <value MACH="frontera">.*frontera</value>
     <value MACH="greenplanet-sky24">gplogin\d.gp.local</value>
     <value MACH="gust">gu.*.hpc.ucar.edu</value>
@@ -65,6 +67,7 @@ This allows using a different mpirun command to launch unit tests
     <value MACH="lonestar5">.*ls5\.tacc\.utexas\.edu</value>
     <value MACH="melvin">(melvin|watson)</value>
     <value MACH="perlmutter">$ENV{NERSC_HOST}:perlmutter</value>
+    <value MACH="saga">$HOSTNAME</value>
     <value MACH="sandia-srn-sems">(s999964|climate|penn)</value>
     <value MACH="sandiatoss3">(skybridge|chama)-login</value>
     <value MACH="stampede2-skx">.*stampede2</value>
@@ -74,7 +77,7 @@ This allows using a different mpirun command to launch unit tests
     <value MACH="thunder">.*.thunder.ucar.edu</value>
     <value MACH="ubuntu-latest">$ENV{CIME_TEST_PLATFORM}:ubuntu-latest</value>
     <value MACH="zeus">(login[1,2]-ib|n[0-9][0-9][0-9]-ib)</value>
-  </NODENAME_REGEX>    
+  </NODENAME_REGEX>
 
 
 

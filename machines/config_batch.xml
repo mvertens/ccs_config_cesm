@@ -184,7 +184,7 @@
     <directives>
       <directive>-l nodes={{ num_nodes }}</directive>
       <directive>-q iccp</directive>
-      <directive> -V </directive> 
+      <directive> -V </directive>
 
     </directives>
     <queues>
@@ -665,6 +665,100 @@
       <queue walltimemin="00:00" walltimemax="02:00" default="true">p_short</queue>
       <queue walltimemin="02:00" walltimemax="04:00">p_medium</queue>
       <queue walltimemin="04:00" walltimemax="08:00">p_long</queue>
+    </queues>
+  </batch_system>
+
+    <batch_system MACH="betzy" type="slurm">
+    <batch_submit>sbatch</batch_submit>
+    <submit_args>
+      <argument> --time $JOB_WALLCLOCK_TIME </argument>
+      <argument> --account $PROJECT </argument>
+    </submit_args>
+    <directives>
+      <directive> --ntasks={{ total_tasks }}</directive>
+      <directive> --export=ALL</directive>
+      <directive> --switches=1</directive>
+    </directives>
+    <directives queue = "normal">
+      <directive> --partition=normal</directive>
+    </directives>
+    <directives queue = "devel">
+      <directive> --partition=normal</directive>
+      <directive> --qos=devel</directive>
+    </directives>
+    <directives queue = "preproc">
+      <directive> --partition=preproc</directive>
+      <directive> --mem=16G</directive>
+    </directives>
+    <queues>
+      <queue walltimemax="00:59:00" nodemin="4" nodemax="1024" default="true">normal</queue>
+      <queue walltimemax="00:59:00" nodemin="1" nodemax="1" >preproc</queue>
+      <queue walltimemax="00:59:00" nodemin="1" nodemax="4" >devel</queue>
+    </queues>
+  </batch_system>
+
+  <batch_system MACH="fram" type="slurm">
+    <batch_submit>sbatch</batch_submit>
+    <submit_args>
+      <argument> --time $JOB_WALLCLOCK_TIME </argument>
+      <argument> --account $PROJECT </argument>
+    </submit_args>
+    <directives>
+      <directive> --ntasks={{ total_tasks }}</directive>
+      <directive> --export=ALL</directive>
+      <directive> --switches=1</directive>
+    </directives>
+    <directives queue = "normal">
+      <directive> --partition=normal</directive>
+    </directives>
+    <directives queue = "devel">
+      <directive> --partition=normal</directive>
+      <directive> --qos=devel</directive>
+    </directives>
+    <directives queue = "short">
+      <directive> --partition=normal</directive>
+      <directive> --qos=short</directive>
+    </directives>
+    <directives queue = "bigmem">
+      <directive> --partition=bigmem</directive>
+      <directive> --mem-per-cpu=8G</directive>
+    </directives>
+    <queues>
+      <queue walltimemax="00:59:00" nodemin="1" nodemax="32" default="true">normal</queue>
+      <queue walltimemax="00:29:00" nodemin="1" nodemax="8" >devel</queue>
+      <queue walltimemax="00:59:00" nodemin="1" nodemax="10" >short</queue>
+      <queue walltimemax="00:29:00" nodemin="1" nodemax="8" >bigmem</queue>
+    </queues>
+  </batch_system>
+
+  <batch_system MACH="saga" type="slurm">
+    <batch_submit>sbatch</batch_submit>
+    <submit_args>
+      <argument> --time $JOB_WALLCLOCK_TIME </argument>
+      <argument> --account $PROJECT </argument>
+    </submit_args>
+    <directives>
+      <directive> --ntasks={{ total_tasks }}</directive>
+      <directive> --export=ALL</directive>
+      <directive> --switches=1</directive>
+    </directives>
+    <directives queue="normal">
+      <directive>  --partition normal</directive>
+      <directive> --mem-per-cpu=3G</directive>
+    </directives>
+    <directives queue="devel">
+      <directive>  --partition normal</directive>
+      <directive> --mem-per-cpu=3G</directive>
+      <directive> --qos=devel</directive>
+    </directives>
+    <directives queue="bigmem">
+      <directive> --partition bigmem</directive>
+      <directive> --mem-per-cpu=8G</directive>
+    </directives>
+    <queues>
+      <queue walltimemax="00:59:00" nodemin="1" nodemax="6" default="true">normal</queue>
+      <queue walltimemax="00:59:00" nodemin="1" nodemax="3">devel</queue>
+      <queue walltimemax="00:59:00" nodemin="1" nodemax="6">bigmem</queue>
     </queues>
   </batch_system>
 
