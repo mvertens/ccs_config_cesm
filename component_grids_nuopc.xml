@@ -330,13 +330,13 @@
     <nx>3600</nx> <ny>2400</ny>
     <mesh>$DIN_LOC_ROOT/share/meshes/tx0.1v2_ESMFmesh_cd5_c20210105.nc</mesh>
     <desc>tx0.1v2 is tripole v2 1/10-deg grid:</desc>
-    <support>Experimental for high resolution experiments</support>
+    <support>Experimental for high resolution experiments with MOM6</support>
   </domain>
   <domain name="tx0.1v3">
     <nx>3600</nx> <ny>2400</ny>
     <mesh>$DIN_LOC_ROOT/share/meshes/tx0.1v3_ESMFmesh_cdf5_c20211011.nc</mesh>
     <desc>tx0.1v3 is tripole v3 1/10-deg grid:</desc>
-    <support>Experimental for high resolution experiments</support>
+    <support>Experimental for high resolution experiments with MOM6</support>
   </domain>
   <domain name="tnx1v4">
     <nx>360</nx> <ny>384</ny>
@@ -354,6 +354,18 @@
     <nx>180</nx> <ny>192</ny>
     <mesh>$DIN_LOC_ROOT/share/meshes/tnx2v1_20230815_cdf5_ESMFmesh.nc</mesh>
     <desc>tnx2v1 is tripole v1 2-deg BLOM grid:</desc>
+    <support>Experimental for BLOM experiments</support>
+  </domain>
+  <domain name="tnx0.25v4">
+    <nx>1440</nx> <ny>1153</ny>
+    <mesh>FILL_IN</mesh>
+    <desc>tnx0.25v4 is tripole v4 1/4-deg BLOM grid:</desc>
+    <support>Experimental for BLOM experiments</support>
+  </domain>
+  <domain name="tnx0.125v4">
+    <nx>2880</nx> <ny>2161</ny>
+    <mesh>FILL_IN</mesh>
+    <desc>tnx0.125v4 is tripole v4 1/8-deg BLOM grid:</desc>
     <support>Experimental for BLOM experiments</support>
   </domain>
 
