@@ -115,7 +115,7 @@
 
   <!-- eulerian grids with CAM -->
 
-  <model_grid alias="T5_T5_mg37" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="T5_T5_mg37" compset="_DOCN">
     <grid name="atm">T5</grid>
     <grid name="lnd">T5</grid>
     <grid name="ocnice">T5</grid>
@@ -127,19 +127,19 @@
     <grid name="ocnice">gx3v7</grid>
     <mask>gx3v7</mask>
   </model_grid>
-  <model_grid alias="T42_T42" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="T42_T42" compset="_DOCN">
     <grid name="atm">T42</grid>
     <grid name="lnd">T42</grid>
     <grid name="ocnice">T42</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="T42_T42_mtn14" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="T42_T42_mtn14" compset="_DOCN">
     <grid name="atm">T42</grid>
     <grid name="lnd">T42</grid>
     <grid name="ocnice">T42</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="T42_T42_mg17" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="T42_T42_mg17" compset="_DOCN">
     <grid name="atm">T42</grid>
     <grid name="lnd">T42</grid>
     <grid name="ocnice">T42</grid>
@@ -235,14 +235,14 @@
     <grid name="ocnice">gx1v7</grid>
     <mask>gx1v7</mask>
   </model_grid>
-  <model_grid alias="f09_f09_mg17" not_compset="_POP|_MOM|_BLOM" >
+  <model_grid alias="f09_f09_mg17" compset="_DOCN" >
     <!-- Needed for aux_cdeps_noresm test suite -->
     <grid name="atm">0.9x1.25</grid>
     <grid name="lnd">0.9x1.25</grid>
     <grid name="ocnice">0.9x1.25</grid>
     <mask>gx1v7</mask>
   </model_grid>
-  <model_grid alias="f09_f09_mtn14" not_compset="_POP|_MOM|_BLOM" >
+  <model_grid alias="f09_f09_mtn14" compset="_DOCN" >
     <grid name="atm">0.9x1.25</grid>
     <grid name="lnd">0.9x1.25</grid>
     <grid name="ocnice">0.9x1.25</grid>
@@ -263,7 +263,7 @@
 
   <!-- f19 finite volume atm grid -->
 
-  <model_grid alias="f19_g17">
+  <model_grid alias="f19_g17" not_compset="_BLOM">
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
     <grid name="ocnice">gx1v7</grid>
@@ -275,20 +275,20 @@
     <grid name="ocnice">tnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="f19_f19_mg17" not_compset="_POP|_MOM|_BLOM" >
+  <model_grid alias="f19_f19_mg17" compset="_DOCN" >
     <!-- Needed for aux_cdeps_noresm test suite -->
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
     <grid name="ocnice">1.9x2.5</grid>
     <mask>gx1v7</mask>
   </model_grid>
-  <model_grid alias="f19_f19_mtn14" not_compset="_POP">
+  <model_grid alias="f19_f19_mtn14" compset="_DOCN">
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
     <grid name="ocnice">1.9x2.5</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="f19_f19" compset="DATM">
+  <model_grid alias="f19_f19" compset="_DOCN">
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
     <grid name="ocnice">1.9x2.5</grid>
@@ -309,7 +309,7 @@
     <grid name="ocnice">gx3v7</grid>
     <mask>gx3v7</mask>
   </model_grid>
-  <model_grid alias="f45_f45_mg37" not_compset="_POP">
+  <model_grid alias="f45_f45_mg37" compset="_DOCN">
     <grid name="atm">4x5</grid>
     <grid name="lnd">4x5</grid>
     <grid name="ocnice">4x5</grid>
@@ -318,7 +318,7 @@
 
   <!-- f10 finite volume atm grid -->
 
-  <model_grid alias="f10_f10_mg37" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="f10_f10_mg37" compset="_DOCN">
     <grid name="atm">10x15</grid>
     <grid name="lnd">10x15</grid>
     <grid name="ocnice">10x15</grid>
@@ -333,14 +333,14 @@
 
   <!--  spectral element grids -->
 
-  <model_grid alias="ne3pg3_ne3pg3_mg37" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne3pg3_ne3pg3_mg37" compset="_DOCN">
     <grid name="atm">ne3np4.pg3</grid>
     <grid name="lnd">ne3np4.pg3</grid>
     <grid name="ocnice">ne3np4.pg3</grid>
     <mask>gx3v7</mask>
   </model_grid>
 
-  <model_grid alias="ne5_ne5_mg37" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne5_ne5_mg37" compset="_DOCN">
     <grid name="atm">ne5np4</grid>
     <grid name="lnd">ne5np4</grid>
     <grid name="ocnice">ne5np4</grid>
@@ -353,7 +353,7 @@
     <grid name="ocnice">tnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="ne16_ne16_tn14" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne16_ne16_tn14" compset="_DOCN">
     <grid name="atm">ne16np4</grid>
     <grid name="lnd">ne16np4</grid>
     <grid name="ocnice">ne16np4</grid>
@@ -372,7 +372,7 @@
     <grid name="ocnice">tnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="ne30_ne30_mg17" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne30_ne30_mg17" compset="_DOCN">
     <grid name="atm">ne30np4</grid>
     <grid name="lnd">ne30np4</grid>
     <grid name="ocnice">ne30np4</grid>
@@ -398,7 +398,7 @@
     <grid name="ocnice">tx0.1v2</grid>
     <mask>tx0.1v2</mask>
   </model_grid>
-  <model_grid alias="ne120_ne120_mg17" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne120_ne120_mg17" compset="_DOCN">
     <grid name="atm">ne120np4</grid>
     <grid name="lnd">ne120np4</grid>
     <grid name="ocnice">ne120np4</grid>
@@ -428,14 +428,14 @@
     <mask>gx1v7</mask>
   </model_grid>
 
-  <model_grid alias="ne120pg2_ne120pg2_mg17" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne120pg2_ne120pg2_mg17" compset="_DOCN">
     <grid name="atm">ne120np4.pg2</grid>
     <grid name="lnd">ne120np4.pg2</grid>
     <grid name="ocnice">ne120np4.pg2</grid>
     <mask>gx1v7</mask>
   </model_grid>
 
-  <model_grid alias="ne120pg2_ne120pg2_mt12" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne120pg2_ne120pg2_mt12" compset="_DOCN">
     <grid name="atm">ne120np4.pg2</grid>
     <grid name="lnd">ne120np4.pg2</grid>
     <grid name="ocnice">ne120np4.pg2</grid>
@@ -451,35 +451,35 @@
 
   <!--  spectral element grids with 3x3 FVM physics grid -->
 
-  <model_grid alias="ne5pg3_ne5pg3_mg37" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne5pg3_ne5pg3_mg37" compset="_DOCN">
     <grid name="atm">ne5np4.pg3</grid>
     <grid name="lnd">ne5np4.pg3</grid>
     <grid name="ocnice">ne5np4.pg3</grid>
     <mask>gx3v7</mask>
   </model_grid>
 
-  <model_grid alias="ne16pg3_ne16pg3_mtn14" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne16pg3_ne16pg3_mtn14" compset="_DOCN">
     <grid name="atm">ne16np4.pg3</grid>
     <grid name="lnd">ne16np4.pg3</grid>
     <grid name="ocnice">ne16np4.pg3</grid>
     <mask>tnx1v5</mask>
   </model_grid>
 
-  <model_grid alias="ne30pg3_ne30pg3_mtn14" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne30pg3_ne30pg3_mtn14" compset="_DOCN">
     <grid name="atm">ne30np4.pg3</grid>
     <grid name="lnd">ne30np4.pg3</grid>
     <grid name="ocnice">ne30np4.pg3</grid>
     <mask>tnx1v4</mask>
   </model_grid>
 
-  <model_grid alias="ne60pg3_ne60pg3_mtn14" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne60pg3_ne60pg3_mtn14" compset="_DOCN">
     <grid name="atm">ne60np4.pg3</grid>
     <grid name="lnd">ne60np4.pg3</grid>
     <grid name="ocnice">ne60np4.pg3</grid>
     <mask>tnx1v4</mask>
   </model_grid>
 
-  <model_grid alias="ne120pg3_ne120pg3_mtn14" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne120pg3_ne120pg3_mtn14" compset="_DOCN">
     <grid name="atm">ne120np4.pg3</grid>
     <grid name="lnd">ne120np4.pg3</grid>
     <grid name="ocnice">ne120np4.pg3</grid>
@@ -495,25 +495,25 @@
 
   <!--  spectral element grids with 4x4 FVM physics grid -->
 
-  <model_grid alias="ne5pg4_ne5pg4_mg37" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne5pg4_ne5pg4_mg37" compset="_DOCN">
     <grid name="atm">ne5np4.pg4</grid>
     <grid name="lnd">ne5np4.pg4</grid>
     <grid name="ocnice">ne5np4.pg4</grid>
     <mask>gx3v7</mask>
   </model_grid>
-  <model_grid alias="ne30pg4_ne30pg4_mg17" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne30pg4_ne30pg4_mg17" compset="_DOCN">
     <grid name="atm">ne30np4.pg4</grid>
     <grid name="lnd">ne30np4.pg4</grid>
     <grid name="ocnice">ne30np4.pg4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="ne60pg4_ne60pg4_mg17" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne60pg4_ne60pg4_mg17" compset="_DOCN">
     <grid name="atm">ne60np4.pg4</grid>
     <grid name="lnd">ne60np4.pg4</grid>
     <grid name="ocnice">ne60np4.pg4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="ne120pg4_ne120pg4_mg17" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne120pg4_ne120pg4_mg17" compset="_DOCN">
     <grid name="atm">ne120np4.pg4</grid>
     <grid name="lnd">ne120np4.pg4</grid>
     <grid name="ocnice">ne120np4.pg4</grid>
@@ -522,13 +522,13 @@
 
   <!-- VR-CESM grids with CAM-SE -->
 
-  <model_grid alias="ne0TESTONLYne5x4_ne0TESTONLYne5x4_mg37" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne0TESTONLYne5x4_ne0TESTONLYne5x4_mg37" compset="_DOCN">
     <grid name="atm">ne0np4TESTONLY.ne5x4</grid>
     <grid name="lnd">ne0np4TESTONLY.ne5x4</grid>
     <grid name="ocnice">ne0np4TESTONLY.ne5x4</grid>
     <mask>gx3v7</mask>
   </model_grid>
-  <model_grid alias="ne0ARCTICne30x4_ne0ARCTICne30x4_mt12" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne0ARCTICne30x4_ne0ARCTICne30x4_mt12" compset="_DOCN">
     <grid name="atm">ne0np4.ARCTIC.ne30x4</grid>
     <grid name="lnd">ne0np4.ARCTIC.ne30x4</grid>
     <grid name="ocnice">ne0np4.ARCTIC.ne30x4</grid>
@@ -546,7 +546,7 @@
     <grid name="ocnice">tx0.1v2</grid>
     <mask>tx0.1v2</mask>
   </model_grid>
-  <model_grid alias="ne0ARCTICne30x4_ne0ARCTICne30x4_mg17" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne0ARCTICne30x4_ne0ARCTICne30x4_mg17" compset="_DOCN">
     <grid name="atm">ne0np4.ARCTIC.ne30x4</grid>
     <grid name="lnd">ne0np4.ARCTIC.ne30x4</grid>
     <grid name="ocnice">ne0np4.ARCTIC.ne30x4</grid>
@@ -558,7 +558,7 @@
     <grid name="ocnice">gx1v7</grid>
     <mask>gx1v7</mask>
   </model_grid>
-  <model_grid alias="ne0ARCTICGRISne30x8_ne0ARCTICGRISne30x8_mt12" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="ne0ARCTICGRISne30x8_ne0ARCTICGRISne30x8_mt12" compset="_DOCN">
     <grid name="atm">ne0np4.ARCTICGRIS.ne30x8</grid>
     <grid name="lnd">ne0np4.ARCTICGRIS.ne30x8</grid>
     <grid name="ocnice">ne0np4.ARCTICGRIS.ne30x8</grid>
@@ -567,19 +567,19 @@
 
   <!-- MPAS-A grids -->
 
-  <model_grid alias="mpasa480_mpasa480" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="mpasa480_mpasa480" compset="_DOCN">
     <grid name="atm">mpasa480</grid>
     <grid name="lnd">mpasa480</grid>
     <grid name="ocnice">mpasa480</grid>
     <mask>gx1v7</mask>
   </model_grid>
-  <model_grid alias="mpasa240_mpasa240" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="mpasa240_mpasa240" compset="_DOCN">
     <grid name="atm">mpasa240</grid>
     <grid name="lnd">mpasa240</grid>
     <grid name="ocnice">mpasa240</grid>
     <mask>gx1v7</mask>
   </model_grid>
-  <model_grid alias="mpasa120_mpasa120" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="mpasa120_mpasa120" compset="_DOCN">
     <grid name="atm">mpasa120</grid>
     <grid name="lnd">mpasa120</grid>
     <grid name="ocnice">mpasa120</grid>
@@ -692,21 +692,21 @@
     <grid name="ocnice">tnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="f19_f19_ais8_mtn14" compset="_CISM|_DGLC" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="f19_f19_ais8_mtn14" compset="_CISM|_DGLC" not_compset="_POP|_MOM">
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
     <grid name="glc">ais8</grid>
     <grid name="ocnice">tnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="f19_f19_ais8gris4_mtn14" compset="_CISM|_DGLC" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="f19_f19_ais8gris4_mtn14" compset="_CISM|_DGLC" not_compset="_POP|_MOM">
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
     <grid name="glc">ais8:gris4</grid>
     <grid name="ocnice">tnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="f19_tn14_gris4" compset="_CISM|_DGLC">
+  <model_grid alias="f19_tn14_gris4" compset="_CISM|_DGLC" not_compset="_POP|_MOM">
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
     <grid name="glc">gris4</grid>
@@ -760,14 +760,14 @@
     <grid name="wav">wise.tnx1v4p.100k</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="f19_g17_wg17" compset="_CAM">
+  <model_grid alias="f19_g17_wg17" compset="_CAM" not_compset="BLOM" >
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
     <grid name="ocnice">gx1v7</grid>
     <grid name="wav">gx1v7</grid>
     <mask>gx1v7</mask>
   </model_grid>
-  <model_grid alias="f19_tn14_wtn14" not_compset="_POP|_MOM|_BLOM">
+  <model_grid alias="f19_tn14_wtn14" not_compset="_POP|_MOM">
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
     <grid name="wav">wtnx1v4</grid>
