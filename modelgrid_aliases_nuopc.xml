@@ -194,7 +194,7 @@
     <grid name="rof">JRA025</grid>
     <grid name="ocnice">tnx1v4</grid>
   </model_grid>
-;  <model_grid alias="TL319_tn21" not_compset="_CAM">
+  <model_grid alias="TL319_tn21" not_compset="_CAM">
     <grid name="atm">TL319</grid>
     <grid name="lnd">TL319</grid>
     <grid name="rof">JRA025</grid>
@@ -705,7 +705,7 @@
     <grid name="ocnice">tnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="f19_tn14_gris4" compset="_CISM|_DGLC" not_compset="_POP|_MOM">>
+  <model_grid alias="f19_tn14_gris4" compset="_CISM|_DGLC" not_compset="_POP|_MOM">
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
     <grid name="glc">gris4</grid>
