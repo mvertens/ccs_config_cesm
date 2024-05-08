@@ -272,12 +272,6 @@
     <grid name="ocnice">1.9x2.5</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="f19_f19" compset="_DOCN">
-    <grid name="atm">1.9x2.5</grid>
-    <grid name="lnd">1.9x2.5</grid>
-    <grid name="ocnice">1.9x2.5</grid>
-    <mask>gx1v7</mask>
-  </model_grid>
   <model_grid alias="f19_f19_mnull" compset="_DOCN%SAQUAP|DOCN%DAQUAP" >
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
