@@ -1,6 +1,5 @@
 <machine MACH="saga">
   <DESC>Hewlett Packard Enterprise - CentOS Linux release 7.6.1810 (Core)</DESC>
-  <NODENAME_REGEX>$HOSTNAME</NODENAME_REGEX>
   <OS>LINUX</OS>
   <COMPILERS>intel</COMPILERS>
   <MPILIBS>impi</MPILIBS>
