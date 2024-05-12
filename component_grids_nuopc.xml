@@ -89,6 +89,13 @@
   </domain>
 
   <!-- CAM/SE meshes -->
+  <domain name="ne3np4">
+    <nx>488</nx> <ny>1</ny>
+    <!-- This is needed for PTS_MODE - it specifies the xml variable PTS_DOMAINFILE -->
+    <file>$DIN_LOC_ROOT/share/domains/domain.lnd.ne3np4_gx3v7.230718.nc</file>
+    <mesh>$DIN_LOC_ROOT/share/meshes/ne3np4_ESMFmesh_c230714_cdf5.nc</mesh>
+    <desc>ne3np4 is Spectral Elem 10-deg grid:</desc>
+  </domain>
   <domain name="ne3np4.pg3">
     <nx>486</nx> <ny>1</ny>
     <mesh>$DIN_LOC_ROOT/share/meshes/ne3pg3_ESMFmesh_c221214_cdf5.nc</mesh>
@@ -241,6 +248,13 @@
     <support>Test support only</support>
   </domain>
 
+  <domain name="ne0np4.POLARCAP.ne30x4">
+    <nx>186194</nx> <ny>1</ny>
+    <mesh>$DIN_LOC_ROOT/share/meshes/POLARCAP_ne30x4_np4_ESMFmesh_cdf5_c20240222.nc</mesh>
+    <desc>ne0np4.POLARCAP.ne30x4 is a Spectral Elem 1-deg grid with a 1/4 deg refined region over the Arctic and Antarctica:</desc>
+    <support>Test support only</support>
+  </domain>
+
   <!-- CAM/MPAS meshes -->
   <domain name="mpasa480">
     <nx>2562</nx> <ny>1</ny>
@@ -318,6 +332,12 @@
     <nx>540</nx> <ny>458</ny>
     <mesh>$DIN_LOC_ROOT/share/meshes/tx0.66v1_190314_ESMFmesh.nc</mesh>
     <desc>tx0.66v1 is tripole v1 0.66-deg MOM6 grid:</desc>
+    <support>Experimental for MOM6 experiments</support>
+  </domain>
+  <domain name="tx2_3v2">
+    <nx>540</nx> <ny>480</ny>
+    <mesh>$DIN_LOC_ROOT/share/meshes/tx2_3v2_230415_ESMFmesh.nc</mesh>
+    <desc>tx2_3v2 is tripole v2 2/3-deg MOM6 grid:</desc>
     <support>Experimental for MOM6 experiments</support>
   </domain>
   <domain name="tx0.25v1">
