@@ -153,38 +153,7 @@
     <grid name="ocnice">gx3v7</grid>
     <mask>gx3v7</mask>
   </model_grid>
-  <model_grid alias="TL319_g17" compset="_DOCN.|DROF%JRA-1p4">
-    <grid name="atm">TL319</grid>
-    <grid name="lnd">TL319</grid>
-    <grid name="ocnice">gx1v7</grid>
-    <grid name="rof">JRA025v2</grid>
-    <mask>gx1v7</mask>
-  </model_grid>
-  <model_grid alias="TL319_g17" not_compset="_CAM" compset="_DOCN">
-    <grid name="atm">TL319</grid>
-    <grid name="lnd">TL319</grid>
-    <grid name="ocnice">gx1v7</grid>
-    <grid name="rof">JRA025</grid>
-    <mask>gx1v7</mask>
-  </model_grid>
-  <model_grid alias="TL319_t061" not_compset="_CAM" compset="_DOCN">
-    <grid name="atm">TL319</grid>
-    <grid name="lnd">TL319</grid>
-    <grid name="ocnice">tx0.66v1</grid>
-    <grid name="rof">JRA025</grid>
-  </model_grid>
-  <model_grid alias="TL319_tn14" not_compset="_CAM" compset="_BLOM|DOCN">
-    <grid name="atm">TL319</grid>
-    <grid name="lnd">TL319</grid>
-    <grid name="rof">JRA025</grid>
-    <grid name="ocnice">tnx1v4</grid>
-  </model_grid>
-  <model_grid alias="TL319_tn21" not_compset="_CAM" compset="_BLOM|DOCN">
-    <grid name="atm">TL319</grid>
-    <grid name="lnd">TL319</grid>
-    <grid name="rof">JRA025</grid>
-    <grid name="ocnice">tnx2v1</grid>
-  </model_grid>
+
   <model_grid alias="TL639_tn14" not_compset="_CAM" compset="_BLOM|DOCN">
     <grid name="atm">TL639</grid>
     <grid name="lnd">TL639</grid>
@@ -192,6 +161,36 @@
     <grid name="ocnice">tnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
+
+  <model_grid alias="TL319_tn14" not_compset="_CAM" compset="_BLOM|DOCN">
+    <grid name="atm">TL319</grid>
+    <grid name="lnd">TL319</grid>
+    <grid name="rof">JRA025</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+  <model_grid alias="TL319_tn21" not_compset="_CAM" compset="_BLOM|DOCN">
+    <grid name="atm">TL319</grid>
+    <grid name="lnd">TL319</grid>
+    <grid name="rof">JRA025</grid>
+    <grid name="ocnice">tnx2v1</grid>
+    <mask>tnx2v1</mask>
+  </model_grid>
+  <model_grid alias="TL319_tn025" not_compset="_CAM" compset="_BLOM|DOCN">
+    <grid name="atm">TL319</grid>
+    <grid name="lnd">TL319</grid>
+    <grid name="rof">JRA025</grid>
+    <grid name="ocnice">tnx0.25v4</grid>
+    <mask>tn0.25v4</mask>
+  </model_grid>
+  <model_grid alias="TL319_tn0125" not_compset="_CAM" compset="_BLOM|DOCN">
+    <grid name="atm">TL319</grid>
+    <grid name="lnd">TL319</grid>
+    <grid name="rof">JRA025</grid>
+    <grid name="ocnice">tnx0.125v4</grid>
+    <mask>tnx0.125v4</mask>
+  </model_grid>
+
   <model_grid alias="T62_tn14" not_compset="_CAM" compset="_BLOM|DOCN">
     <grid name="atm">T62</grid>
     <grid name="lnd">T62</grid>
@@ -202,13 +201,19 @@
     <grid name="atm">T62</grid>
     <grid name="lnd">T62</grid>
     <grid name="ocnice">tnx2v1</grid>
-    <mask>tnx1v4</mask>
+    <mask>tnx2v1</mask>
   </model_grid>
-  <model_grid alias="T62_g17" not_compset="_CAM" compset="_DOCN">
+  <model_grid alias="T62_tn025" not_compset="_CAM" compset="_BLOM|DOCN">
     <grid name="atm">T62</grid>
     <grid name="lnd">T62</grid>
-    <grid name="ocnice">gx1v7</grid>
-    <mask>gx1v7</mask>
+    <grid name="ocnice">tnx0.25v4</grid>
+    <mask>tnx0.25v4</mask>
+  </model_grid>
+  <model_grid alias="T62_tn0125" not_compset="_CAM" compset="_BLOM|DOCN">
+    <grid name="atm">T62</grid>
+    <grid name="lnd">T62</grid>
+    <grid name="ocnice">tnx0.125v4</grid>
+    <mask>tnx0.125v4</mask>
   </model_grid>
 
   <!-- f09 finite volume atm grid -->
