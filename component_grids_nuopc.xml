@@ -377,13 +377,13 @@
     <support>Experimental for BLOM experiments</support>
   </domain>
   <domain name="tnx0.25v4">
-    <nx>1440</nx> <ny>1153</ny>
-    <mesh>FILL_IN</mesh>
+    <nx>1440</nx> <ny>1152</ny>
+    <mesh>$DIN_LOC_ROOT/share/meshes/tnx0.25v4_ESMFmesh_cdf5_c20231006.nc</mesh>
     <desc>tnx0.25v4 is tripole v4 1/4-deg BLOM grid:</desc>
     <support>Experimental for BLOM experiments</support>
   </domain>
   <domain name="tnx0.125v4">
-    <nx>2880</nx> <ny>2161</ny>
+    <nx>2880</nx> <ny>2164</ny>
     <mesh>FILL_IN</mesh>
     <desc>tnx0.125v4 is tripole v4 1/8-deg BLOM grid:</desc>
     <support>Experimental for BLOM experiments</support>
