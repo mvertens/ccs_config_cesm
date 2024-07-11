@@ -376,6 +376,14 @@
     <mask>gx1v7</mask>
   </model_grid>
 
+  <!--  spectral element grids using trigrid -->
+  <model_grid alias="ne30pg3_f09_tn14" compset="_BLOM|_DOCN">
+    <grid name="atm">ne30np4.pg3</grid>
+    <grid name="lnd">0.9x1.25</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+
   <!--  spectral element grids with 3x3 FVM physics grid -->
 
   <model_grid alias="ne5pg3_ne5pg3_mg37" compset="_DOCN|_SOCN">

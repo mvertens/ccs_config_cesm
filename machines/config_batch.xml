@@ -183,7 +183,7 @@
     <directives>
       <directive>-l nodes={{ num_nodes }}</directive>
       <directive>-q iccp</directive>
-      <directive> -V </directive> 
+      <directive> -V </directive>
 
     </directives>
     <queues>
@@ -677,6 +677,7 @@
       <directive> --ntasks={{ total_tasks }}</directive>
       <directive> --export=ALL</directive>
       <directive> --switches=1</directive>
+      <directive> --exclude=b3355,b3356,b3357,b3359,b3379,b3382,b3383</directive>
     </directives>
     <directives queue = "normal">
       <directive> --partition=normal</directive>
