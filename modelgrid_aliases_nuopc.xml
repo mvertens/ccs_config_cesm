@@ -190,7 +190,14 @@
     <grid name="ocnice">tnx0.125v4</grid>
     <mask>tnx0.125v4</mask>
   </model_grid>
-
+  <model_grid alias="TL319_tn14_wtn14nw" not_compset="_CAM" compset="BLOM|DOCN|SOCN">
+    <grid name="atm">TL319</grid>
+    <grid name="lnd">TL319</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <grid name="rof">JRA025</grid>
+    <grid name="wav">wtnx1v4nw</grid>
+    <mask>wtnx1v4nw</mask>
+  </model_grid>
   <model_grid alias="T62_tn14" not_compset="_CAM" compset="_BLOM|DOCN">
     <grid name="atm">T62</grid>
     <grid name="lnd">T62</grid>
@@ -683,32 +690,19 @@
     <mask>tnx1v4</mask>
   </model_grid>
 
-  <!-- NorESM ww3 testing configurations WITH datm and WITHOUT ocean-->
+  <!-- NorESM ww3 testing configurations WITH datm and WITHOUT ocean/ice-->
 
-  <model_grid alias="ww3a" compset="DWAV">
-    <grid name="wav">ww3a</grid>
-    <!-- only used for ADWAV testing -->
-  </model_grid>
   <model_grid alias="TL319_wtn14" not_compset="_CAM" compset="_BLOM|_DOCN">
     <grid name="atm">TL319</grid>
     <grid name="wav">wtnx1v4</grid>
     <mask>wtnx1v4</mask>
   </model_grid>
-  <model_grid alias="TL319_wtn14100k" not_compset="_CAM" compset="_BLOM|_DOCN">
+  <model_grid alias="TL319_wtn14nw" not_compset="_CAM|_MOM">
     <grid name="atm">TL319</grid>
-    <grid name="wav">wise.tnx1v4p.100k</grid>
-    <mask>wise.tnx1v4p.100k</mask>
+    <grid name="wav">wtnx1v4nw</grid>
+    <mask>wtnx1v4nw</mask>
   </model_grid>
-  <model_grid alias="TL319_wtri1deg" not_compset="_CAM" compset="_BLOM|_DOCN">
-    <grid name="atm">TL319</grid>
-    <grid name="wav">tri1degmask</grid>
-    <mask>tri1degmask</mask>
-  </model_grid>
-  <model_grid alias="TL319_w025" not_compset="_CAM" compset="_BLOM|_DOCN">
-    <grid name="atm">TL319</grid>
-    <grid name="wav">w025</grid>
-    <mask>w025</mask>
-  </model_grid>
+
   <model_grid alias="T62_wtn14" not_compset="_CAM" compset="_BLOM|_DOCN">
     <grid name="atm">T62</grid>
     <grid name="wav">wtnx1v4</grid>
@@ -719,26 +713,39 @@
     <grid name="wav">wtnx1v4nw</grid>
     <mask>wtnx1v4nw</mask>
   </model_grid>
-  <model_grid alias="T62_w025" not_compset="_CAM" compset="_BLOM|_DOCN">
-    <grid name="atm">T62</grid>
+
+  <model_grid alias="TL319_w025" not_compset="_CAM" compset="_BLOM|_DOCN">
+    <!-- This is an unstructured wave grid -->
+    <grid name="atm">TL319</grid>
     <grid name="wav">w025</grid>
     <mask>w025</mask>
   </model_grid>
-  <model_grid alias="T62_w025reg" not_compset="_CAM" compset="_BLOM|_DOCN">
-    <grid name="atm">T62</grid>
-    <grid name="wav">w025reg</grid>
-    <mask>w025reg</mask>
+
+  <model_grid alias="ww3a" compset="DWAV">
+    <grid name="wav">ww3a</grid>
+    <!-- only used for ADWAV testing -->
   </model_grid>
 
-  <!-- NorESM ww3 testing configurations WITH datm and ocean-->
+  <!-- NorESM ww3 testing configurations WITH datm and ocean/ice-->
 
   <model_grid alias="TL319_tn14_wtn14" not_compset="_CAM" compset="_BLOM|_DOCN">
+    <!-- Tripole grid with wall -->
     <grid name="atm">TL319</grid>
     <grid name="ocnice">tnx1v4</grid>
     <grid name="rof">JRA025</grid>
     <grid name="wav">wtnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
+  <model_grid alias="TL319_tn14_wtn14nw" not_compset="_CAM" compset="_BLOM|_DOCN">
+    <!-- Tripole grid without wall -->
+    <grid name="atm">TL319</grid>
+    <grid name="lnd">TL319</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <grid name="rof">JRA025</grid>
+    <grid name="wav">wtnx1v4nw</grid>
+    <mask>wtnx1v4nw</mask>
+  </model_grid>
+
   <model_grid alias="T62_tn14_wtn14" not_compset="_CAM" compset="_BLOM|_DOCN">
     <grid name="atm">T62</grid>
     <grid name="ocnice">tnx1v4</grid>
@@ -750,35 +757,6 @@
     <grid name="ocnice">tnx1v4</grid>
     <grid name="wav">wtnx1v4nw</grid>
     <mask>tnx1v4</mask>
-  </model_grid>
-  <model_grid alias="T62_tn14_w025" not_compset="_CAM" compset="_BLOM|_DOCN">
-    <grid name="atm">TL319</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <grid name="rof">JRA025</grid>
-    <grid name="wav">w025</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-  <model_grid alias="TL319_tn14_wtn14100k" not_compset="_CAM" compset="_BLOM|_DOCN">
-    <grid name="atm">TL319</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <grid name="rof">JRA025</grid>
-    <grid name="wav">wise.tnx1v4p.100k</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-  <model_grid alias="TL319_tn14_w025" not_compset="_CAM" compset="_BLOM|_DOCN">
-    <grid name="atm">TL319</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <grid name="rof">JRA025</grid>
-    <grid name="wav">w025</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-  <model_grid alias="TL319_g17_wg17" not_compset="_CAM" compset="DROF%JRA">
-    <grid name="atm">TL319</grid>
-    <grid name="lnd">TL319</grid>
-    <grid name="ocnice">gx1v7</grid>
-    <grid name="rof">JRA025v2</grid>
-    <grid name="wav">gx1v7</grid>
-    <mask>gx1v7</mask>
   </model_grid>
 
 </grids>
