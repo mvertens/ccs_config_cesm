@@ -13,7 +13,7 @@ endif()
 string(REPLACE "-mkl=cluster" "" SLIBS "${SLIBS}")
 string(APPEND CPPDEFS " -DHAVE_GETTID")
 
-if (COMP_WAV STREQUAL ww3dev)
+if (COMP_WAV STREQUAL ww3)
   if (MPILIB STREQUAL openmpi)
      string(APPEND SLIBS "  -l:libparmetis.a -lmetis ")
   endif()
