@@ -1,8 +1,8 @@
 <machine MACH="betzy">
   <DESC> BullSequana XH2000 AMD® Epyc™ "Rome" 2.2GHz, 128-way nodes, os is Linux, batch system is SLURM</DESC>
   <OS>LINUX</OS>
-  <COMPILERS>intel,intel-oneapi</COMPILERS>
-  <MPILIBS compiler="intel" >openmpi,impi</MPILIBS>
+  <COMPILERS>intel-oneapi,intel</COMPILERS>
+  <MPILIBS>openmpi,impi</MPILIBS>
   <CIME_OUTPUT_ROOT>/cluster/work/users/$USER/noresm</CIME_OUTPUT_ROOT>
   <DIN_LOC_ROOT>/cluster/shared/noresm/inputdata</DIN_LOC_ROOT>
   <DIN_LOC_ROOT_CLMFORC>/cluster/shared/noresm/inputdata/atm/datm7</DIN_LOC_ROOT_CLMFORC>
@@ -21,7 +21,7 @@
   <mpirun mpilib="default">
     <executable>srun</executable>
   </mpirun>
-  <module_system type="module">
+  <module_system type="module" allow_error="true">
     <init_path lang="perl">$ENV{LMOD_PKG}/init/perl</init_path>
     <init_path lang="python">$ENV{LMOD_PKG}/init/env_modules_python.py</init_path>
     <init_path lang="csh">$ENV{LMOD_PKG}/init/csh</init_path>
@@ -37,6 +37,7 @@
       <command name="load">ESMF/8.4.2-iomkl-2022a-ParallelIO-2.5.10</command>
       <command name="load">Python/3.11.3-GCCcore-12.3.0</command>
       <command name="load">CMake/3.26.3-GCCcore-12.3.0</command>
+      <command name="load">ParMETIS/4.0.3-iompi-2022a</command>
     </modules>
     <modules compiler="intel" mpilib="openmpi">
       <command name="--force purge"></command>
