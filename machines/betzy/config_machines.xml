@@ -38,6 +38,7 @@
       <command name="load">Python/3.11.3-GCCcore-12.3.0</command>
       <command name="load">CMake/3.26.3-GCCcore-12.3.0</command>
       <command name="load">ParMETIS/4.0.3-iompi-2022a</command>
+      <command name="load">git/2.38.1-GCCcore-12.2.0-nodocs</command>
     </modules>
     <modules compiler="intel" mpilib="openmpi">
       <command name="--force purge"></command>
@@ -47,6 +48,7 @@
       <command name="load">CMake/3.21.1-GCCcore-11.2.0</command>
       <command name="load">Python/3.9.6-GCCcore-11.2.0</command>
       <command name="load">ParMETIS/4.0.3-iompi-2021b</command>
+      <command name="load">git/2.38.1-GCCcore-12.2.0-nodocs</command>
     </modules>
     <modules compiler="intel" mpilib="impi">
       <command name="--force purge"></command>
@@ -56,6 +58,7 @@
       <command name="load">CMake/3.21.1-GCCcore-11.2.0</command>
       <command name="load">Python/3.9.6-GCCcore-11.2.0</command>
       <command name="load">ParMETIS/4.0.3-iimpi-2021b</command>
+      <command name="load">git/2.38.1-GCCcore-12.2.0-nodocs</command>
     </modules>
   </module_system>
   <environment_variables>
