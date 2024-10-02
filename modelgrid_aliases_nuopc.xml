@@ -113,67 +113,59 @@
 
   <!-- eulerian grids with CAM -->
 
-  <model_grid alias="T5_T5_mg37" compset="_DOCN|_SOCN">
-    <grid name="atm">T5</grid>
-    <grid name="lnd">T5</grid>
-    <grid name="ocnice">T5</grid>
-    <mask>gx3v7</mask>
-  </model_grid>
   <model_grid alias="T31_g37">
     <grid name="atm">T31</grid>
     <grid name="lnd">T31</grid>
     <grid name="ocnice">gx3v7</grid>
     <mask>gx3v7</mask>
   </model_grid>
-  <model_grid alias="T42_T42" compset="_DOCN|_SOCN">
+  <model_grid alias="T5_T5_mg37" not_compset="_BLOM">
+    <grid name="atm">T5</grid>
+    <grid name="lnd">T5</grid>
+    <grid name="ocnice">T5</grid>
+    <mask>gx3v7</mask>
+  </model_grid>
+  <model_grid alias="T42_T42" not_compset="_BLOM">
     <grid name="atm">T42</grid>
     <grid name="lnd">T42</grid>
     <grid name="ocnice">T42</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="T42_T42_mtn14" compset="_DOCN|_SOCN">
+  <model_grid alias="T42_T42_mtn14" not_compset="_BLOM">
     <grid name="atm">T42</grid>
     <grid name="lnd">T42</grid>
     <grid name="ocnice">T42</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="T42_T42_mg17" compset="_DOCN|_SOCN">
+  <model_grid alias="T42_T42_mg17" not_compset="_BLOM">
     <grid name="atm">T42</grid>
     <grid name="lnd">T42</grid>
     <grid name="ocnice">T42</grid>
     <mask>gx1v7</mask>
   </model_grid>
 
-  <!-- eulerian grids with DATM -->
+  <!-- TL319 datm JRA grid -->
 
-  <model_grid alias="T62_g37" not_compset="_CAM" compset="_DOCN|_SOCN">
-    <grid name="atm">T62</grid>
-    <grid name="lnd">T62</grid>
-    <grid name="ocnice">gx3v7</grid>
-    <mask>gx3v7</mask>
-  </model_grid>
-
-  <model_grid alias="TL639_tn14" not_compset="_CAM" compset="DROF%JRA|_SROF">
-    <grid name="atm">TL639</grid>
-    <grid name="lnd">TL639</grid>
-    <grid name="rof">JRA025</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
-
-  <model_grid alias="TL319_tn14" not_compset="_CAM" compset="DROF%JRA|_SROF">
-    <grid name="atm">TL319</grid>
-    <grid name="lnd">TL319</grid>
-    <grid name="rof">JRA025</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <mask>tnx1v4</mask>
-  </model_grid>
   <model_grid alias="TL319_tn21" not_compset="_CAM" compset="DROF%JRA|_SROF">
     <grid name="atm">TL319</grid>
     <grid name="lnd">TL319</grid>
     <grid name="rof">JRA025</grid>
     <grid name="ocnice">tnx2v1</grid>
     <mask>tnx2v1</mask>
+  </model_grid>
+  <model_grid alias="TL319_tn14" not_compset="_CAM" compset="_DROF%JRA|_SROF">
+    <grid name="atm">TL319</grid>
+    <grid name="lnd">TL319</grid>
+    <grid name="rof">JRA025</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+  <model_grid alias="TL319_tn05" not_compset="_CAM" compset="_DROF%JRA|_SROF">
+    <grid name="atm">TL319</grid>
+    <grid name="lnd">TL319</grid>
+    <grid name="rof">JRA025</grid>
+    <grid name="ocnice">tnx0.5v1</grid>
+    <mask>tnx0.5v1</mask>
   </model_grid>
   <model_grid alias="TL319_tn025" not_compset="_CAM" compset="DROF%JRA|_SROF">
     <grid name="atm">TL319</grid>
@@ -190,25 +182,49 @@
     <mask>tnx0.125v4</mask>
   </model_grid>
 
-  <model_grid alias="T62_tn14" not_compset="_CAM" compset="DROF%JRA|_SROF">
-    <grid name="atm">T62</grid>
-    <grid name="lnd">T62</grid>
+  <!-- TL639 datm JRA grid -->
+
+  <model_grid alias="TL639_tn14" not_compset="_CAM" compset="_DROF%JRA|_SROF">
+    <grid name="atm">TL639</grid>
+    <grid name="lnd">TL639</grid>
+    <grid name="rof">JRA025</grid>
     <grid name="ocnice">tnx1v4</grid>
     <mask>tnx1v4</mask>
   </model_grid>
-  <model_grid alias="T62_tn21" not_compset="_CAM" compset="DROF%JRA|_SROF">
+
+  <!-- T62 datm core forcing grid -->
+
+  <model_grid alias="T62_g37" not_compset="_CAM|_BLOM">
+    <grid name="atm">T62</grid>
+    <grid name="lnd">T62</grid>
+    <grid name="ocnice">gx3v7</grid>
+    <mask>gx3v7</mask>
+  </model_grid>
+  <model_grid alias="T62_tn21" not_compset="_CAM">
     <grid name="atm">T62</grid>
     <grid name="lnd">T62</grid>
     <grid name="ocnice">tnx2v1</grid>
     <mask>tnx2v1</mask>
   </model_grid>
-  <model_grid alias="T62_tn025" not_compset="_CAM" compset="DROF%JRA|_SROF">
+  <model_grid alias="T62_tn14" not_compset="_CAM">
+    <grid name="atm">T62</grid>
+    <grid name="lnd">T62</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
+  <model_grid alias="T62_tn05" not_compset="_CAM">
+    <grid name="atm">T62</grid>
+    <grid name="lnd">T62</grid>
+    <grid name="ocnice">tnx0.5v1</grid>
+    <mask>tnx0.5v1</mask>
+  </model_grid>
+  <model_grid alias="T62_tn025" not_compset="_CAM">
     <grid name="atm">T62</grid>
     <grid name="lnd">T62</grid>
     <grid name="ocnice">tnx0.25v4</grid>
     <mask>tnx0.25v4</mask>
   </model_grid>
-  <model_grid alias="T62_tn0125" not_compset="_CAM" compset="DROF%JRA|_SROF">
+  <model_grid alias="T62_tn0125" not_compset="_CAM">
     <grid name="atm">T62</grid>
     <grid name="lnd">T62</grid>
     <grid name="ocnice">tnx0.125v4</grid>
@@ -251,17 +267,17 @@
 
   <!-- f19 finite volume atm grid -->
 
-  <model_grid alias="f19_g17" not_compset="BLOM">
-    <grid name="atm">1.9x2.5</grid>
-    <grid name="lnd">1.9x2.5</grid>
-    <grid name="ocnice">gx1v7</grid>
-   <mask>gx1v7</mask>
-  </model_grid>
   <model_grid alias="f19_tn14">
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
     <grid name="ocnice">tnx1v4</grid>
     <mask>tnx1v4</mask>
+  </model_grid>
+  <model_grid alias="f19_g17" not_compset="BLOM">
+    <grid name="atm">1.9x2.5</grid>
+    <grid name="lnd">1.9x2.5</grid>
+    <grid name="ocnice">gx1v7</grid>
+   <mask>gx1v7</mask>
   </model_grid>
   <model_grid alias="f19_f19_mg17" not_compset="_BLOM">
     <!-- Needed for aux_cdeps_noresm test suite -->
@@ -303,19 +319,11 @@
     <grid name="ocnice">ne3np4.pg3</grid>
     <mask>gx3v7</mask>
   </model_grid>
-
   <model_grid alias="ne5_ne5_mg37" not_compset="BLOM">
     <grid name="atm">ne5np4</grid>
     <grid name="lnd">ne5np4</grid>
     <grid name="ocnice">ne5np4</grid>
     <mask>gx3v7</mask>
-  </model_grid>
-
-  <model_grid alias="ne16_tn14">
-    <grid name="atm">ne16np4</grid>
-    <grid name="lnd">ne16np4</grid>
-    <grid name="ocnice">tnx1v4</grid>
-    <mask>tnx1v4</mask>
   </model_grid>
   <model_grid alias="ne16_ne16_tn14" not_compset="BLOM">
     <grid name="atm">ne16np4</grid>
@@ -324,6 +332,12 @@
     <mask>tnx1v4</mask>
   </model_grid>
 
+  <model_grid alias="ne16_tn14">
+    <grid name="atm">ne16np4</grid>
+    <grid name="lnd">ne16np4</grid>
+    <grid name="ocnice">tnx1v4</grid>
+    <mask>tnx1v4</mask>
+  </model_grid>
   <model_grid alias="ne30_tn14">
     <grid name="atm">ne30np4</grid>
     <grid name="lnd">ne30np4</grid>
@@ -349,13 +363,13 @@
     <grid name="ocnice">gx1v7</grid>
     <mask>gx1v7</mask>
   </model_grid>
-
   <model_grid alias="ne120_g17" not_compset="_BLOM">
     <grid name="atm">ne120np4</grid>
     <grid name="lnd">ne120np4</grid>
     <grid name="ocnice">gx1v7</grid>
     <mask>gx1v7</mask>
   </model_grid>
+
   <model_grid alias="ne120_t12" not_compset="_BLOM">
     <grid name="atm">ne120np4</grid>
     <grid name="lnd">ne120np4</grid>
@@ -493,19 +507,19 @@
 
   <!-- new runoff grids for data runoff model DROF -->
 
-  <model_grid alias="f45_g37_rx1" compset="_DROF">
+  <model_grid alias="f45_g37_rx1" compset="_DROF|_SROF">
     <grid name="atm">4x5</grid>
     <grid name="lnd">4x5</grid>
     <grid name="ocnice">gx3v7</grid>
     <mask>gx3v7</mask>
   </model_grid>
-  <model_grid alias="f19_g17_rx1" compset="_DROF">
+  <model_grid alias="f19_g17_rx1" compset="_DROF|_SROF">
     <grid name="atm">1.9x2.5</grid>
     <grid name="lnd">1.9x2.5</grid>
     <grid name="ocnice">gx1v7</grid>
     <mask>gx1v7</mask>
   </model_grid>
-  <model_grid alias="ne30_g17_rx1" compset="_DROF">
+  <model_grid alias="ne30_g17_rx1" compset="_DROF|_SROF">
     <grid name="atm">ne30np4</grid>
     <grid name="lnd">ne30np4</grid>
     <grid name="ocnice">gx1v7</grid>
@@ -718,7 +732,7 @@
 
   <!-- NorESM ww3 testing configurations WITH datm and ocean-->
 
-  <model_grid alias="TL319_tn14_wtn14" not_compset="_CAM">
+  <model_grid alias="TL319_tn14_wtn14" not_compset="_CAM" >
     <grid name="atm">TL319</grid>
     <grid name="ocnice">tnx1v4</grid>
     <grid name="rof">JRA025</grid>
