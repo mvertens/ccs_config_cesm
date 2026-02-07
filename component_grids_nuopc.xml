@@ -595,6 +595,13 @@
     <desc> uniform 2.5km made by AA unstructured mesh</desc>
     <support>Experimental for Making Waves experiments</support>
   </domain>
+  <domain name="meps">
+    <nx>949</nx> <ny>1069</ny>
+    <mesh>/cluster/work/users/cmi022/MEPS_cdf5_ESMFmesh_251125.nc</mesh>
+    <desc>MEPS data grid</desc>
+    <support>Experimental atm/wave grid experiments</support>
+  </domain>
+
 
   <!-- ======================================================== -->
   <!-- ATM/LND domains for single point cmeps driver -->
