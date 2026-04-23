@@ -17,6 +17,13 @@
   <!-- ATM/LND meshes regional and global -->
   <!-- ======================================================== -->
 
+  <domain name="meps">
+    <nx>949</nx> <ny>1069</ny>
+    <mesh>/cluster/work/users/cmi022/MEPS_cdf5_ESMFmesh_251125.nc</mesh>
+    <desc>MEPS data grid</desc>
+    <support>Experimental atm/wave grid experiments</support>
+  </domain>
+
   <domain name="360x720cru">
     <nx>720</nx> <ny>360</ny>
     <mesh>$DIN_LOC_ROOT/share/meshes/360x720_120830_ESMFmesh_c20210507.nc</mesh>
@@ -595,13 +602,13 @@
     <desc> uniform 2.5km made by AA unstructured mesh</desc>
     <support>Experimental for Making Waves experiments</support>
   </domain>
-  <domain name="meps">
-    <nx>949</nx> <ny>1069</ny>
-    <mesh>/cluster/work/users/cmi022/MEPS_cdf5_ESMFmesh_251125.nc</mesh>
-    <desc>MEPS data grid</desc>
-    <support>Experimental atm/wave grid experiments</support>
-  </domain>
 
+   <domain name="weps">
+    <nx>949</nx> <ny>1069</ny>
+    <mesh>$DIN_LOC_ROOT/share/meshes/MEPS_cdf5_ESMFmesh_251125.nc</mesh>
+    <desc>WW3 regional grid matching WEPS</desc>
+    <support>For testing of the WAV model</support>
+  </domain>
 
   <!-- ======================================================== -->
   <!-- ATM/LND domains for single point cmeps driver -->
