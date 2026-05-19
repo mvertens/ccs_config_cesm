@@ -2,9 +2,22 @@
 
 # Batch system directives
 {{ batchdirectives }}
-#SBATCH  --mem-per-cpu=10000M
+
+
+machine=`./xmlquery --value MACH`
+echo $machine
+if [[ "$machine" == "olivia" ]]; then
+module purge
+module load NRIS/CPU
+module load Python/3.12.3-GCCcore-13.3.0
+module load NCO/5.2.9-intel-2024a-NorESM
+elif [[ "$machine" == "betzy" ]]; then
 module purge
 module load NCO/5.1.9-iomkl-2022a
+else
+echo "no proper NCO"    
+exit
+fi
 
 ntasks=16
 
@@ -18,7 +31,9 @@ ZIPRES=0
 RMLOGS=0
 
 # archieve data
+caseroot=`./xmlquery --value CASEROOT`
 archivedata=`./xmlquery --value DOUT_S_ROOT`
+casename=`./xmlquery --value CASE`
 
 if [ ! -d $archivedata ]; then
   echo "${sn}: ${archivedata} is not a directory." >&2
@@ -28,7 +43,6 @@ cd $archivedata
 
 complevel=5 # 1-9
 lid="`date +%y%m%d-%H%M%S`"
-
 # Functions
 
 convert_cmd () {
@@ -53,7 +67,7 @@ compress_cmd () {
 convert_loop () {
   set -e
   # loop over cases 
-  for ncfile in `find . -wholename '*/hist/*.nc' -print`; do
+  for ncfile in `find . -wholename '*/hist/${casename}*.nc' -print`; do
     if [[ "`ncdump -k $ncfile`" != 'netCDF-4' && "`ncdump -k $ncfile`" != 'netCDF-4 classic model' ]] ; then
       while :; do
         if [ `jobs -p|wc -l` -lt $ntasks ]; then
@@ -87,3 +101,8 @@ convert_loop () {
 echo `date` > $archivedata/archive.log.$lid
 convert_loop >> $archivedata/archive.log.$lid
 echo `date` >> $archivedata/archive.log.$lid
+rsync -avh $caseroot $archivedata >> $archivedata/case.log.$lid
+echo `date` >> $archivedata/archive.log.$lid
+
+unset SLURM_MEM_PER_NODE
+unset SLURM_MEM_PER_CPU
