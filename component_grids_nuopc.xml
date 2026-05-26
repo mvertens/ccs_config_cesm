@@ -17,7 +17,7 @@
   <!-- ATM/LND meshes regional and global -->
   <!-- ======================================================== -->
 
-  <domain name="meps">
+  <domain name="mepsa">
     <nx>949</nx> <ny>1069</ny>
     <mesh>/cluster/work/users/cmi022/MEPS_cdf5_ESMFmesh_251125.nc</mesh>
     <desc>MEPS data grid</desc>
@@ -603,9 +603,9 @@
     <support>Experimental for Making Waves experiments</support>
   </domain>
 
-   <domain name="weps">
+   <domain name="mepsw">
     <nx>949</nx> <ny>1069</ny>
-    <mesh>$DIN_LOC_ROOT/share/meshes/MEPS_cdf5_ESMFmesh_251125.nc</mesh>
+    <mesh>$DIN_LOC_ROOT/share/meshes/MEPS_cdf5_ESMFmesh_12052026.nc</mesh>
     <desc>WW3 regional grid matching WEPS</desc>
     <support>For testing of the WAV model</support>
   </domain>
