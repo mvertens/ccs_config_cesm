@@ -20,7 +20,7 @@
   <domain name="mepsa">
     <nx>949</nx> <ny>1069</ny>
     <!-- <mesh>/cluster/work/users/cmi022/MEPS_cdf5_ESMFmesh_251125.nc</mesh> -->
-    <mesh>/cluster/work/users/cmi022/grid_mepsa/mesh_cdf5_mepsa_05062026.nc</mesh>
+    <mesh>/cluster/work/users/cmi022/new_mesh_files/mesh_cdf5_atm_090626.nc</mesh>
     <desc>MEPS data grid</desc>
     <support>Experimental atm/wave grid experiments</support>
   </domain>
@@ -403,8 +403,8 @@
   </domain>
   <domain name="mepsi">
     <nx>949</nx> <ny>1069</ny>
-    <mesh>/cluster/work/users/cmi022/grid_mepsi/mesh_cdf5_weps_ice_05062026.nc</mesh>
-    <desc>Same grid as mepsw but with a different land-sea mask</desc>
+    <mesh>/cluster/work/users/cmi022/new_mesh_files/mesh_cdf5_ice_090626.nc</mesh>
+    <desc>Same as mepsw but with a different land-sea mask</desc>
     <support>For testing the DICE WEPS forcing</support>
   </domain>
   <!-- ======================================================== -->
@@ -609,9 +609,8 @@
   </domain>
    <domain name="mepsw">
     <nx>949</nx> <ny>1069</ny>
-    <!-- <mesh>$DIN_LOC_ROOT/share/meshes/MEPS_cdf5_ESMFmesh_12052026.nc</mesh> -->
-    <mesh>/cluster/work/users/cmi022/grid_mepsw/mesh_cdf5_MEPS_12052026.nc</mesh>
-    <desc>WW3 regional grid matching WEPS</desc>
+    <mesh>/cluster/work/users/cmi022/new_mesh_files/mesh_cdf5_wav_090626.nc</mesh>
+    <desc>WW3 regional grid matching MEPS</desc>
     <support>For testing of the WAV model</support>
   </domain>
 
