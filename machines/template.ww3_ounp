@@ -6,48 +6,60 @@
 
 machine=`./xmlquery --value MACH`
 echo $machine
+
+# NOTE: ww3_ounp needs netCDF + netCDF-Fortran at runtime. The per-machine module
+#       lists below are the original, tested sets. Some entries may be unnecessary
+#       leftovers (e.g. betzy: ESMF; olivia: Python/NCO). To trim to the true
+#       dependency set, run:  ldd $rundir/ww3_create_ounp/ww3_ounp  (look for
+#       "not found") and keep only the modules that provide the listed libraries.
 if [[ "$machine" == "olivia" ]]; then
-module purge
-module load NRIS/CPU
-module load Python/3.12.3-GCCcore-13.3.0
-module load NCO/5.2.9-intel-2024a-NorESM
+  module purge
+  module load NRIS/CPU
+  module load Python/3.12.3-GCCcore-13.3.0
+  module load NCO/5.2.9-intel-2024a-NorESM
 elif [[ "$machine" == "betzy" ]]; then
-module purge
-module load netCDF/4.9.0-iompi-2022b
-module load netCDF-Fortran/4.6.1-iompi-2023a
-module load ESMF/8.3.0-iomkl-2022a
+  module purge
+  module load netCDF/4.9.0-iompi-2022b
+  module load netCDF-Fortran/4.6.1-iompi-2023a
+  module load ESMF/8.3.0-iomkl-2022a
 else
-echo "no proper modules"
-exit
+  echo "no proper modules for machine '$machine'"
+  exit 1
 fi
 
-ntasks=1
-
-# Get date
+# Unique log id
 lid="`date +%y%m%d-%H%M%S`"
 
-# Set script name
+# Name of the post-processing binary
 sn=ww3_ounp
 
-# Getiing the path to the run directory
+# Path to the run directory (query from the case dir, before any cd)
 rundir=`./xmlquery --value RUNDIR`
 
 # Functions
 copy_binary () {
-  echo copy binary
-  cp $rundir/out_pnt.ww3 $rundir/ww3_create_ounp/out_pnt.ww3
+  echo "copy out_pnt.ww3 into ww3_create_ounp/"
+  if [[ ! -f "$rundir/out_pnt.ww3" ]]; then
+    echo "ERROR: $rundir/out_pnt.ww3 not found - did the wave run complete?"
+    exit 1
+  fi
+  cp "$rundir/out_pnt.ww3" "$rundir/ww3_create_ounp/out_pnt.ww3"
 }
 
 run_postpro () {
-  echo run ww3_ounp
-  rm -f ounp.log
-  set -e
+  echo "run ww3_ounp"
+  # guard: make sure the post-processing binary actually exists and is runnable
+  if [[ ! -x "$rundir/ww3_create_ounp/$sn" ]]; then
+    echo "ERROR: $rundir/ww3_create_ounp/$sn not found or not executable"
+    exit 1
+  fi
   copy_binary
-  $rundir/ww3_create_ounp/$sn > ounp.log
+  # ww3_ounp reads ww3_ounp.inp / mod_def.ww3 / out_pnt.ww3 from the current
+  # directory, so run it from where those inputs live.
+  cd "$rundir/ww3_create_ounp"
+  rm -f ounp.log
+  ./$sn > ounp.log
 }
 
-# Execute the run_postpro
+# Execute (echoed progress captured to a timestamped log in the case dir)
 run_postpro >> ww3_ounp.log.$lid
-
-unset SLURM_MEM_PER_NODE
-unset SLURM_MEM_PER_CPU

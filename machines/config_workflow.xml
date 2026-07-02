@@ -39,6 +39,7 @@
     </job>
     <job name="case.ww3_ounp">
       <template>template.ww3_ounp</template>
+      <hidden>false</hidden>
       <dependency>case.run</dependency>
       <prereq>$BUILD_COMPLETE</prereq>
       <runtime_parameters>
