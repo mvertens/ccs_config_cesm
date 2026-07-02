@@ -37,6 +37,16 @@
       <template>template.case.test</template>
       <prereq>$BUILD_COMPLETE and $TEST</prereq>
     </job>
+    <job name="case.ww3_ounp">
+      <template>template.ww3_ounp</template>
+      <dependency>case.run</dependency>
+      <prereq>$BUILD_COMPLETE</prereq>
+      <runtime_parameters>
+        <task_count>1</task_count>
+        <tasks_per_node>1</tasks_per_node>
+        <walltime>0:05:00</walltime>
+      </runtime_parameters>
+    </job>
     <job name="case.st_archive">
       <template>template.st_archive</template>
       <!-- If DOUT_S is true and case.run (or case.test) exits successfully then run st_archive-->
