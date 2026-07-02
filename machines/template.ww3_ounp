@@ -1,0 +1,53 @@
+#!/bin/bash -e
+
+# Batch system directives
+{{ batchdirectives }}
+
+
+machine=`./xmlquery --value MACH`
+echo $machine
+if [[ "$machine" == "olivia" ]]; then
+module purge
+module load NRIS/CPU
+module load Python/3.12.3-GCCcore-13.3.0
+module load NCO/5.2.9-intel-2024a-NorESM
+elif [[ "$machine" == "betzy" ]]; then
+module purge
+module load netCDF/4.9.0-iompi-2022b
+module load netCDF-Fortran/4.6.1-iompi-2023a
+module load ESMF/8.3.0-iomkl-2022a
+else
+echo "no proper modules"
+exit
+fi
+
+ntasks=1
+
+# Get date
+lid="`date +%y%m%d-%H%M%S`"
+
+# Set script name
+sn=ww3_ounp
+
+# Getiing the path to the run directory
+rundir=`./xmlquery --value RUNDIR`
+
+# Functions
+copy_binary () {
+  echo copy binary
+  cp $rundir/out_pnt.ww3 $rundir/ww3_create_ounp/out_pnt.ww3
+}
+
+run_postpro () {
+  echo run ww3_ounp
+  rm -f ounp.log
+  set -e
+  copy_binary
+  $rundir/ww3_create_ounp/$sn > ounp.log
+}
+
+# Execute the run_postpro
+run_postpro >> ww3_ounp.log.$lid
+
+unset SLURM_MEM_PER_NODE
+unset SLURM_MEM_PER_CPU
