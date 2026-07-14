@@ -62,4 +62,4 @@ run_postpro () {
 }
 
 # Execute (echoed progress captured to a timestamped log in the case dir)
-run_postpro >> ww3_ounp.log.$lid
+run_postpro >> $rundir/ww3_ounp.log.$lid
