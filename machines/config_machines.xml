@@ -85,8 +85,8 @@ This allows using a different mpirun command to launch unit tests
 
 
   <default_run_suffix>
-    <default_run_exe>${EXEROOT}/cesm.exe </default_run_exe>
-    <default_run_misc_suffix> >> cesm.log.$LID 2>&amp;1 </default_run_misc_suffix>
+    <default_run_exe>${EXEROOT}/${MODEL}.exe </default_run_exe>
+    <default_run_misc_suffix> >> ${MODEL}.log.$LID 2>&amp;1 </default_run_misc_suffix>
   </default_run_suffix>
 
 </config_machines>
